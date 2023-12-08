@@ -1,5 +1,2 @@
-oh-my-posh init pwsh | Invoke-Expression
-
-Set-PSReadLineOption -EditMode Vi
-Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
-
+# oh-my-posh
+. "$PSScriptRoot\oh-my-posh.ps1"
