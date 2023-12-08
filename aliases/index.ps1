@@ -1,1 +1,1 @@
-# echo 'can you run me?'
+Set-Alias -Name cl -Value clear
