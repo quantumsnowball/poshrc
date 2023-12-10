@@ -1,1 +1,1 @@
-Set-Alias -Name cl -Value clear
+. "$PSScriptRoot\shell.ps1"
