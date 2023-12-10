@@ -1,0 +1,1 @@
+. "$PSScriptRoot\zoxide.ps1"
