@@ -1,4 +1,5 @@
 # clear
+Set-Alias -Name c -Value clear
 Set-Alias -Name cl -Value clear
 
 # reload
