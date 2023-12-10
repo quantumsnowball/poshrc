@@ -1,0 +1,1 @@
+. "$PSScriptRoot\shell.ps1"

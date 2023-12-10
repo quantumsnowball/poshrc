@@ -1,7 +1,7 @@
 $base = Split-Path -Path (Get-Item $PROFILE).Target -Parent
 
 # load plugins
-. "$base\plugins\index.ps1"
+. "$base\plugins\__init__.ps1"
 
 # load alias
-. "$base\aliases\index.ps1"
+. "$base\aliases\__init__.ps1"
