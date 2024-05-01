@@ -1,16 +1,22 @@
-param ($keywords)
+# collect args as searching keywords
+param ($kwargs)
 
-$processes = Get-Process
 
-foreach ($keyword in $keywords) {
-    $matchingProcesses = $processes | Where-Object { $_.ProcessName -like "*$keyword*" }
-    foreach ($process in $matchingProcesses) {
+# iterate through keywords
+foreach ($keyword in $kwargs) {
+
+    # get all process containing this keyword
+    $procs = Get-Process | Where-Object { $_.ProcessName -like "*$keyword*" }
+
+    # stop the process
+    foreach ($p in $procs) {
         try {
-            $process | Stop-Process -Force -ErrorAction Stop
-            Write-Host "Killed: $($process.ProcessName): $($process.Id)"
+            # raise any exception if failed
+            $p | Stop-Process -Force -ErrorAction Stop
+            Write-Host "Killed: $($p.ProcessName): $($p.Id)"
         }
         catch {
-            Write-Host "Failed: $($process.ProcessName): $($process.Id)" -ForegroundColor Red
+            Write-Host "Failed: $($p.ProcessName): $($p.Id)" -ForegroundColor Red
         }
     }
 }
