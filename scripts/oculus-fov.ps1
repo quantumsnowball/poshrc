@@ -26,7 +26,9 @@ Remove-Item -Path $configPath -Force
 
 # restart OculusClient.exe
 kill-them "OculusClient"
-Start-Process -FilePath "C:\Program Files\Oculus\Support\oculus-client\OculusClient.exe"
+Start-Job -ScriptBlock { 
+    Start-Process -FilePath "C:\Program Files\Oculus\Support\oculus-client\OculusClient.exe"
+}
 
 # let user read the result
-Start-Sleep -Seconds 3
+Start-Sleep -Seconds 10
