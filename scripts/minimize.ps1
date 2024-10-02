@@ -1,7 +1,9 @@
+# params
 param (
     [string]$NAME
 )
 
+# API
 Add-Type @'
 using System;
 using System.Runtime.InteropServices;
@@ -28,9 +30,12 @@ public class API {
 }
 '@
 
+# search for processes
 $procs = Get-Process $NAME
 foreach ($p in $procs) {
+    # only non-zero handle is a valid window
     if ($p.MainWindowHandle -ne 0) {
+        # do minimize
         [API]::ShowWindow($p.MainWindowHandle, 'Minimize')
     }
 }
