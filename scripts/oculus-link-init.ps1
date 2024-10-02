@@ -8,7 +8,8 @@ param (
 $CONFIG_PATH = "./oculus-cli-config.txt" 
 $CLIENT_NAME = "OculusClient"
 $CLIENT_PATH = "C:\Program Files\Oculus\Support\oculus-client\$CLIENT_NAME.exe"
-$WAIT_SEC = 10
+$MINIMIZE_WAIT = 3
+$INFO_WAIT = 10
 $CONFIG = @"
 service set-client-fov-tan-angle-multiplier $FOV_H $FOV_V
 service set-use-fov-stencil Off
@@ -34,9 +35,8 @@ Start-Job -ScriptBlock {
 } -ArgumentList $CLIENT_PATH
 
 # minimize the client window
-Start-Sleep -Seconds 5
+Start-Sleep -Seconds $MINIMIZE_WAIT
 minimize $CLIENT_NAME
 
 # let user read the result
-Start-Sleep -Seconds $WAIT_SEC
-
+Start-Sleep -Seconds $INFO_WAIT
