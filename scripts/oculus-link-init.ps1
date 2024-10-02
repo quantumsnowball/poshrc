@@ -33,5 +33,10 @@ Start-Job -ScriptBlock {
     Start-Process -FilePath $path
 } -ArgumentList $CLIENT_PATH
 
+# minimize the client window
+Start-Sleep -Seconds 5
+minimize $CLIENT_NAME
+
 # let user read the result
 Start-Sleep -Seconds $WAIT_SEC
+
