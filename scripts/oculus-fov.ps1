@@ -1,6 +1,12 @@
+# params
+param (
+    [float]$fovH = 0.80,
+    [float]$fovV = 0.75
+)
+
 # prepare config content
 $config = @"
-service set-client-fov-tan-angle-multiplier 0.80 0.75
+service set-client-fov-tan-angle-multiplier $fovH $fovV
 service set-use-fov-stencil Off
 service set-force-mip-gen-on-all-layers Off
 server:asw.Off
