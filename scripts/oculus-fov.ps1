@@ -1,34 +1,37 @@
 # params
 param (
-    [float]$fovH = 0.80,
-    [float]$fovV = 0.75
+    [float]$FOV_H = 0.80,
+    [float]$FOV_V = 0.75
 )
 
-# prepare config content
-$config = @"
-service set-client-fov-tan-angle-multiplier $fovH $fovV
+# constants
+$CONFIG_PATH = "./oculus-cli-config.txt" 
+$CLIENT_NAME = "OculusClient"
+$CLIENT_PATH = "C:\Program Files\Oculus\Support\oculus-client\$CLIENT_NAME.exe"
+$WAIT_SEC = 10
+$CONFIG = @"
+service set-client-fov-tan-angle-multiplier $FOV_H $FOV_V
 service set-use-fov-stencil Off
 service set-force-mip-gen-on-all-layers Off
 server:asw.Off
 exit
 "@
 
-$configPath = "./oculus-cli-config.txt" 
-
 # save config file
-Set-Content -Path $configPath -Value $config
+Set-Content -Path $CONFIG_PATH -Value $CONFIG
 
 # execute config file using OculusDebugToolCLI.exe
-OculusDebugToolCLI.exe -f $configPath
+OculusDebugToolCLI.exe -f $CONFIG_PATH
 
 # delete config file
-Remove-Item -Path $configPath -Force
+Remove-Item -Path $CONFIG_PATH -Force
 
 # restart OculusClient.exe
-kill-them "OculusClient"
+kill-them $CLIENT_NAME
 Start-Job -ScriptBlock { 
-    Start-Process -FilePath "C:\Program Files\Oculus\Support\oculus-client\OculusClient.exe"
-}
+    param ($path)
+    Start-Process -FilePath $path
+} -ArgumentList $CLIENT_PATH
 
 # let user read the result
-Start-Sleep -Seconds 10
+Start-Sleep -Seconds $WAIT_SEC
