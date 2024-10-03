@@ -15,6 +15,7 @@ $OCULUS_DASH_SYMLINK = "$OCULUS_DASH_DIR\$DASH_FNAME"
 
 # kill every process related
 kill-them.ps1 steam,oculus,ovr,vr,meta
+Start-Sleep -Seconds 1
 
 # remove the old symlink
 Remove-Item $OCULUS_DASH_SYMLINK -Force
