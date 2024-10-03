@@ -5,7 +5,7 @@ param (
 
 # const
 $OCULUS_DASH_DIR = "C:\Program Files\Oculus\Support\oculus-dash\dash\bin"
-$OCULUS_KILLER_DIR = "C:\Program Files\OculusKiller"
+$OCULUS_KILLER_DIR = $OCULUS_DASH_DIR
 $ORIGINAL_DASH_FNAME = "OculusOriginalDash.exe"
 $KILLER_DASH_FNAME = "OculusKillerDash.exe"
 $DASH_FNAME = "OculusDash.exe"
