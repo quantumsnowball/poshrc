@@ -5,9 +5,11 @@ param (
 )
 
 # constants
+$SERVICE_NAME = "OVRService"
 $CONFIG_PATH = "./oculus-cli-config.txt" 
 $CLIENT_NAME = "OculusClient"
 $CLIENT_PATH = "C:\Program Files\Oculus\Support\oculus-client\$CLIENT_NAME.exe"
+$SERVICE_RESTART_WAIT = 3
 $MINIMIZE_WAIT = 3
 $INFO_WAIT = 10
 $CONFIG = @"
@@ -20,6 +22,11 @@ exit
 
 # save config file
 Set-Content -Path $CONFIG_PATH -Value $CONFIG
+
+# restart OVRService
+# (need admin right, create shortcut with powershell.exe -f <script>.ps1)
+Restart-Service $SERVICE_NAME
+Start-Sleep -Seconds $SERVICE_RESTART_WAIT
 
 # execute config file using OculusDebugToolCLI.exe
 OculusDebugToolCLI.exe -f $CONFIG_PATH
