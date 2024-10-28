@@ -11,6 +11,8 @@ F13 & n::Home
 F13 & .::End
 F13 & m::PgDn
 F13 & ,::PgUp
+F13 & d::PgDn
+F13 & u::PgUp
 
 ; word jumping, changing, deleting, renaming
 F13 & w::^Right
