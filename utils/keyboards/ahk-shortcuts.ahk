@@ -5,19 +5,23 @@
 ; KEY REMAPS
 ;
 
-; toggle active remap state
+; Toggle active remap state
 active := true
 F13 & F14::
 {
+    ; toggle
     global active
-    active:=!active
+    active := !active
+    ; play sound
     if active
     {
+        ; three high freq short beeps is active
         SoundBeep 800, 150
         SoundBeep 800, 150
         SoundBeep 800, 150
     }
     else
+        ; single low freq long beep is not active
         SoundBeep 400, 450
 
 }
