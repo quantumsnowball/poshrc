@@ -24,5 +24,14 @@ F13 & r::F2
 ; full screen toggle
 F13 & Enter::!Enter
 
+; media keys
+F14 & Up::Volume_Up
+F14 & Down::Volume_Down
+F14 & PgUp::Volume_Up
+F14 & PgDn::Volume_Down
+F14 & RShift::Media_Play_Pause
+F14 & Right::Media_Next
+F14 & Left::Media_Prev
+
 
 return
