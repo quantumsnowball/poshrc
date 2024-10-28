@@ -1,4 +1,8 @@
-﻿#Requires AutoHotkey v2.0
+﻿; version 2.0
+#Requires AutoHotkey v2.0
+
+; auto reload same script
+#SingleInstance Force
 
 
 ;
