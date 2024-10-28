@@ -10,7 +10,7 @@ $CONFIG_PATH = "./oculus-cli-config.txt"
 $CLIENT_NAME = "OculusClient"
 $CLIENT_PATH = "C:\Program Files\Oculus\Support\oculus-client\$CLIENT_NAME.exe"
 $SERVICE_RESTART_WAIT = 3
-$MINIMIZE_WAIT = 3
+$MINIMIZE_WAIT = 5
 $INFO_WAIT = 10
 $CONFIG = @"
 service set-client-fov-tan-angle-multiplier $FOV_H $FOV_V
