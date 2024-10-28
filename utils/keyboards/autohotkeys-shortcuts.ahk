@@ -12,4 +12,11 @@ F13 & .::End
 F13 & m::PgDn
 F13 & ,::PgUp
 
+; word jumping, changing, deleting, renaming
+F13 & w::^Right
+F13 & b::^Left
+F13 & c::^Del
+F13 & x::Del
+F13 & r::F2
+
 return
