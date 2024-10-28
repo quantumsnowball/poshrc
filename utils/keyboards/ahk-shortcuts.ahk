@@ -1,15 +1,47 @@
 ﻿#Requires AutoHotkey v2.0
 
 
-; remaps
-CapsLock::Esc
+;
+; KEY REMAPS
+;
+
+; toggle active remap state
+active := false
+F13 & F14::
+{
+    global active
+    active:=!active
+    if active
+    {
+        SoundBeep 800, 150
+        SoundBeep 800, 150
+        SoundBeep 800, 150
+    }
+    else
+        SoundBeep 400, 450
+
+}
+
+; Dynamic remaps
+; - put potential conflicting remaps here
+#HotIf active
 Esc::`
 LAlt::LCtrl
 LCtrl::LWin
 LWin::LAlt
+#HotIf
+
+; Static remaps
+; - put safe remaps here
+CapsLock::Esc
 Home::Del
 Del::Home
 
+
+;
+; SHORTCUTS
+; - modifiers used here should be non conflicting keys
+; - better map these keys outside ahk using win registry
 
 ; Arrow Keys
 F13 & h::Left
