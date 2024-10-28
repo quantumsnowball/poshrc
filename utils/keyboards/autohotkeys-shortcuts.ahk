@@ -1,5 +1,16 @@
 ﻿#Requires AutoHotkey v2.0
 
+
+; remaps
+CapsLock::Esc
+Esc::`
+LAlt::LCtrl
+LCtrl::LWin
+LWin::LAlt
+Home::Del
+Del::Home
+
+
 ; Arrow Keys
 F13 & h::Left
 F13 & j::Down
