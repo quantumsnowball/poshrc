@@ -8,6 +8,7 @@
 ; Toggle active remap state
 active := true
 F13 & F14::
+F14 & F13::
 {
     ; toggle
     global active
