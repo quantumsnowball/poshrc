@@ -19,4 +19,8 @@ F13 & c::^Del
 F13 & x::Del
 F13 & r::F2
 
+; full screen toggle
+F13 & Enter::!Enter
+
+
 return
