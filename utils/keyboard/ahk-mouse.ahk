@@ -6,8 +6,7 @@ F14 & d::MouseMove +20,  0, 0, "R"
 
 ; mouse click
 F14 & f::LButton
-F14 & r::RButton
-F14 & e::LButton
+F14 & e::MButton
 F14 & q::RButton
 
 ; mouse wheel
@@ -31,8 +30,7 @@ Del & d::MouseMove +20,  0, 0, "R"
 
 ; mouse click
 Del & f::LButton
-Del & r::RButton
-Del & e::LButton
+Del & e::MButton
 Del & q::RButton
 
 ; mouse wheel
