@@ -14,6 +14,7 @@ active := true
 #Include ahk-shortcuts-L1.ahk
 #Include ahk-shortcuts-L2.ahk
 #Include ahk-shortcuts-windows-manager.ahk
+#Include ahk-utils.ahk
 
 ; return
 return
