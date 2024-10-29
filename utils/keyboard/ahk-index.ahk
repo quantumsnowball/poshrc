@@ -13,11 +13,7 @@ active := true
 ; SHORTCUTS
 #Include ahk-shortcuts-L1.ahk
 #Include ahk-shortcuts-L2.ahk
+#Include ahk-shortcuts-windows-manager.ahk
 
-; windows manager
-#+h::#Left
-#+j::#Down
-#+j::#Up
-#+l::#Right
-
+; return
 return
