@@ -11,9 +11,9 @@ active := true
 #Include ahk-remaps.ahk
 
 ; SHORTCUTS
-#Include ahk-shortcuts-L1.ahk
-#Include ahk-shortcuts-L2.ahk
-#Include ahk-shortcuts-windows-manager.ahk
+#Include ahk-text-editing.ahk
+#Include ahk-media-control.ahk
+#Include ahk-windows-manager.ahk
 #Include ahk-utils.ahk
 
 ; return
