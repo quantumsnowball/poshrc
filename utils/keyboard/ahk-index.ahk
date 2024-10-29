@@ -15,6 +15,7 @@ active := true
 #Include ahk-media-control.ahk
 #Include ahk-windows-manager.ahk
 #Include ahk-utils.ahk
+#Include ahk-mouse.ahk
 
 ; return
 return
