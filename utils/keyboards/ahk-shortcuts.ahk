@@ -85,5 +85,10 @@ F14 & RShift::Media_Play_Pause
 F14 & Right::Media_Next
 F14 & Left::Media_Prev
 
+; windows manager
+#+h::#Left
+#+j::#Down
+#+j::#Up
+#+l::#Right
 
 return
