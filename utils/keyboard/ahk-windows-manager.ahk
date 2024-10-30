@@ -32,7 +32,14 @@ Move(x_pct, y_pct, w_pct, h_pct) {
     y_max := A_ScreenHeight - h
     y := y_max * y_pct/100
     ; move active window
+    x := Integer(x), y = Integer(y), w = Integer(w), h = Integer(h)
     WinMove x, y, w, h, "A"
+    ; debug
+    global msg
+    msg := Format("Move(x={1}, y={2}, w={3}, h={4})", x, y, w, h)
 }
-F14 & 1::Move(0, 0, .5, .5)
-F14 & a::Move(0, 0, .5, .85)
+
+; standard presets
+F14 & q::Move(  0,   0,  40,  80)
+F14 & a::Move(  0,   0,  40, 100)
+F14 & z::Move(  0, 100,  40,  80)

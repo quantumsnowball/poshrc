@@ -6,6 +6,7 @@
 
 ; global state variable
 active := true
+msg := ""
 
 ; KEY REMAPS
 #Include ahk-remaps.ahk
