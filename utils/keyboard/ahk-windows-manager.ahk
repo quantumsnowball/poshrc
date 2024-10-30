@@ -14,8 +14,6 @@ F14 & \::AltTab
 F14 & Tab::ShiftAltTab
 
 ; workspace switch
-F14 & ]::#^Right
-F14 & [::#^Left
 F14 & PgDn::#^Right
 F14 & PgUp::#^Left
 
@@ -111,6 +109,18 @@ Moving(i, j) {
     return Move
 }
 
+MoveHorizontal(n) {
+    pid := WinGetPID("A")
+    try {
+        p := win_states[pid]
+        Moving(p.i+n, p.j)("-")
+    } catch {
+        Moving(1, 1)("-")
+    }
+}
+MoveLeft := () => MoveHorizontal(-1)
+MoveRight := () => MoveHorizontal(+1)
+
 ; assignment
 for i, col in keys {
     for j, key in col {
@@ -122,3 +132,5 @@ for i, col in keys {
     }
 }
 
+F14 & [::MoveLeft
+F14 & ]::MoveRight
