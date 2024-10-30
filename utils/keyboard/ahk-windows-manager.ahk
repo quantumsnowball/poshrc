@@ -47,49 +47,41 @@ Move(x_pct, y_pct, w_pct, h_pct) {
 }
 
 ; consts
-W_S := 40
-W_M := 55
-W_L := 70
+W_S := 33
+W_M := 50
+W_L := 67
 H_STD := 85
 
 ; presets
 moves := [
-    [ 
-        ; left
+    [ ; left
         (_) => Move(  0,   0, W_S, H_STD),
         (_) => Move(  0,  50, W_S,   100),
-        (_) => Move(  0, 100, W_S, H_STD),
-    ], [
-        ; left wide
+        (_) => Move(  0, 100, W_S, H_STD), ], 
+    [ ; left wide
         (_) => Move(  0,   0, W_M, H_STD),
         (_) => Move(  0,  50, W_M,   100),
-        (_) => Move(  0, 100, W_M, H_STD),
-    ], [
-        ; central
+        (_) => Move(  0, 100, W_M, H_STD), ], 
+    [ ; central
         (_) => Move( 50,   0, W_S, H_STD),
         (_) => Move( 50,  50, W_S,   100),
-        (_) => Move( 50, 100, W_S, H_STD),
-    ], [
-        ; central wide
+        (_) => Move( 50, 100, W_S, H_STD), ], 
+    [ ; central wide
         (_) => Move( 50,   0, W_M, H_STD),
         (_) => Move( 50,  50, W_M,   100),
-        (_) => Move( 50, 100, W_M, H_STD),
-    ], [
-        ; central max
+        (_) => Move( 50, 100, W_M, H_STD), ], 
+    [ ; central max
         (_) => Move(100,   0, W_L, H_STD),
         (_) => Move(100,  50, W_L,   100),
-        (_) => Move(100, 100, W_L, H_STD),
-    ], [
-        ; right wide
+        (_) => Move(100, 100, W_L, H_STD), ], 
+    [ ; right wide
         (_) => Move(100,   0, W_M, H_STD),
         (_) => Move(100,  50, W_M,   100),
-        (_) => Move(100, 100, W_M, H_STD),
-    ], [
-        ; right
+        (_) => Move(100, 100, W_M, H_STD), ], 
+    [ ; right
         (_) => Move(100,   0, W_S, H_STD),
         (_) => Move(100,  50, W_S,   100),
-        (_) => Move(100, 100, W_S, H_STD),
-    ],
+        (_) => Move(100, 100, W_S, H_STD), ],
 ]
 
 ; keys activated
@@ -106,7 +98,11 @@ keys := [
 ; assignment
 for i, col in keys {
     for j, key in col {
-        Hotkey Format("F14 & {}", key), moves[i][j]
+        try {
+            Hotkey Format("F14 & {}", key), moves[i][j]
+        } catch {
+            return
+        }
     }
 }
 
