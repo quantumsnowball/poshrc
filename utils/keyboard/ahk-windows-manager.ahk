@@ -98,7 +98,7 @@ Moving(i, j) {
         WinMove x, y, w, h, "A"
         ; remember window state
         global win_states
-        pid := WinGetPID("A")
+        pid := WinGetID("A")
         win_states[pid] := {i: i, j: j} 
         ; debug
         ; msg := Format("{1},{2}", win_states[pid].i ,win_states[pid].j)
@@ -110,7 +110,7 @@ Moving(i, j) {
 }
 
 Jump(m, n) {
-    pid := WinGetPID("A")
+    pid := WinGetID("A")
     try {
         p := win_states[pid]
         i := p.i + m
