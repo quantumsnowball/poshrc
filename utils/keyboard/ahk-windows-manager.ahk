@@ -115,7 +115,7 @@ MoveHorizontal(n) {
         p := win_states[pid]
         Moving(p.i+n, p.j)("-")
     } catch {
-        Moving(1, 1)("-")
+        Moving(4, 2)("-")
     }
 }
 MoveLeft := () => MoveHorizontal(-1)
