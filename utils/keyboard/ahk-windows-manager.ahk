@@ -26,6 +26,7 @@ F14 & PgUp::#^Left
 
 ; helpers
 Move(x_pct, y_pct, w_pct, h_pct) {
+    ; get working area, account for taskbar
     MonitorGetWorkArea(1, &left, &top, &right, &bottom)
     ; widht and x
     w_area := right - left
@@ -38,7 +39,7 @@ Move(x_pct, y_pct, w_pct, h_pct) {
     y_max := h_area - h
     y := top + y_max * y_pct/100
     ; move active window
-    x := Integer(x), y = Integer(y), w = Integer(w), h = Integer(h)
+    ; x := Integer(x), y = Integer(y), w = Integer(w), h = Integer(h)
     WinMove x, y, w, h, "A"
     ; debug
     global msg
@@ -47,9 +48,9 @@ Move(x_pct, y_pct, w_pct, h_pct) {
 }
 
 ; consts
-W_S := 33
-W_M := 50
-W_L := 67
+W_S := 33.33
+W_M := 50.0
+W_L := 66.67
 H_STD := 85
 
 ; presets
