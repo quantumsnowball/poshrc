@@ -1,3 +1,10 @@
+; windows operations
+F13 & Home::WinKill "A"
+F14 & Home::WinKill "A"
+F13 & /::WinMinimize "A"
+F14 & /::WinMinimize "A"
+
+
 ; task switch
 F13 & ]::AltTab
 F13 & \::AltTab
