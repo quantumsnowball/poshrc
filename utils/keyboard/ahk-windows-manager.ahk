@@ -109,20 +109,23 @@ Moving(i, j) {
     return Move
 }
 
-MoveHorizontal(n) {
+Jump(m, n) {
     pid := WinGetPID("A")
     try {
         p := win_states[pid]
-        i := p.i + n
-        if (1<=i && i<=keys.Length) {
-            Moving(i, p.j)("-")
+        i := p.i + m
+        j := p.j + n
+        if (1<=i && i<=keys.Length && 1<=j && j<=3) {
+            Moving(i, j)("-")
         }
     } catch {
         Moving(4, 2)("-")
     }
 }
-MoveLeft := () => MoveHorizontal(-1)
-MoveRight := () => MoveHorizontal(+1)
+JumpLeft  := () => Jump(-1,  0)
+JumpRight := () => Jump(+1,  0)
+JumpUp    := () => Jump( 0, -1)
+JumpDown  := () => Jump( 0, +1)
 
 ; assignment
 for i, col in keys {
@@ -135,5 +138,7 @@ for i, col in keys {
     }
 }
 
-F14 & [::MoveLeft
-F14 & ]::MoveRight
+F14 & [::JumpLeft
+F14 & ]::JumpRight           
+F14 & `;::JumpUp
+F14 & .::JumpDown
