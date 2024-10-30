@@ -52,27 +52,61 @@ W_M := 55
 W_L := 70
 H_STD := 85
 
-; left
-F14 & q::Move(  0,   0, W_S, H_STD)
-F14 & a::Move(  0,  50, W_S,   100)
-F14 & z::Move(  0, 100, W_S, H_STD)
-; central
-F14 & w::Move( 50,   0, W_S, H_STD)
-F14 & s::Move( 50,  50, W_S,   100)
-F14 & x::Move( 50, 100, W_S, H_STD)
-; central wide
-F14 & e::Move( 50,   0, W_M, H_STD)
-F14 & d::Move( 50,  50, W_M,   100)
-F14 & c::Move( 50, 100, W_M, H_STD)
-; central max
-F14 & r::Move(100,   0, W_L, H_STD)
-F14 & f::Move(100,  50, W_L,   100)
-F14 & v::Move(100, 100, W_L, H_STD)
-; right wide
-F14 & t::Move(100,   0, W_M, H_STD)
-F14 & g::Move(100,  50, W_M,   100)
-F14 & b::Move(100, 100, W_M, H_STD)
-; right
-F14 & y::Move(100,   0, W_S, H_STD)
-F14 & h::Move(100,  50, W_S,   100)
-F14 & n::Move(100, 100, W_S, H_STD)
+; presets
+moves := [
+    [ 
+        ; left
+        (_) => Move(  0,   0, W_S, H_STD),
+        (_) => Move(  0,  50, W_S,   100),
+        (_) => Move(  0, 100, W_S, H_STD),
+    ], [
+        ; left wide
+        (_) => Move(  0,   0, W_M, H_STD),
+        (_) => Move(  0,  50, W_M,   100),
+        (_) => Move(  0, 100, W_M, H_STD),
+    ], [
+        ; central
+        (_) => Move( 50,   0, W_S, H_STD),
+        (_) => Move( 50,  50, W_S,   100),
+        (_) => Move( 50, 100, W_S, H_STD),
+    ], [
+        ; central wide
+        (_) => Move( 50,   0, W_M, H_STD),
+        (_) => Move( 50,  50, W_M,   100),
+        (_) => Move( 50, 100, W_M, H_STD),
+    ], [
+        ; central max
+        (_) => Move(100,   0, W_L, H_STD),
+        (_) => Move(100,  50, W_L,   100),
+        (_) => Move(100, 100, W_L, H_STD),
+    ], [
+        ; right wide
+        (_) => Move(100,   0, W_M, H_STD),
+        (_) => Move(100,  50, W_M,   100),
+        (_) => Move(100, 100, W_M, H_STD),
+    ], [
+        ; right
+        (_) => Move(100,   0, W_S, H_STD),
+        (_) => Move(100,  50, W_S,   100),
+        (_) => Move(100, 100, W_S, H_STD),
+    ],
+]
+
+; keys activated
+keys := [
+    ["q","a","z"],
+    ["w","s","x"],
+    ["e","d","c"],
+    ["r","f","v"],
+    ["t","g","b"],
+    ["y","h","n"],
+    ["u","j","m"],
+]
+
+; assignment
+for i, col in keys {
+    for j, key in col {
+        Hotkey Format("F14 & {}", key), moves[i][j]
+    }
+}
+
