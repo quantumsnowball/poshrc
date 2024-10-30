@@ -115,7 +115,8 @@ Jump(m, n) {
         p := win_states[pid]
         i := p.i + m
         j := p.j + n
-        if (1<=i && i<=keys.Length && 1<=j && j<=3) {
+        if (1<=i && i<=keys.Length) {
+            j := j<1 ? 3 : j>3 ? 1 : j
             Moving(i, j)("-")
         }
     } catch {
@@ -140,5 +141,5 @@ for i, col in keys {
 
 F14 & [::JumpLeft
 F14 & ]::JumpRight           
-F14 & `;::JumpUp
-F14 & .::JumpDown
+F14 & =::JumpUp
+F14 & '::JumpDown
