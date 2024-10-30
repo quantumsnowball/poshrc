@@ -52,11 +52,11 @@ W_M := 55
 W_L := 70
 H_STD := 85
 
-; left wing
+; left
 F14 & q::Move(  0,   0, W_S, H_STD)
 F14 & a::Move(  0,  50, W_S,   100)
 F14 & z::Move(  0, 100, W_S, H_STD)
-; central wing
+; central
 F14 & w::Move( 50,   0, W_S, H_STD)
 F14 & s::Move( 50,  50, W_S,   100)
 F14 & x::Move( 50, 100, W_S, H_STD)
@@ -68,7 +68,11 @@ F14 & c::Move( 50, 100, W_M, H_STD)
 F14 & r::Move(100,   0, W_L, H_STD)
 F14 & f::Move(100,  50, W_L,   100)
 F14 & v::Move(100, 100, W_L, H_STD)
-; right wing
-F14 & t::Move(100,   0, W_S, H_STD)
-F14 & g::Move(100,  50, W_S,   100)
-F14 & b::Move(100, 100, W_S, H_STD)
+; right wide
+F14 & t::Move(100,   0, W_M, H_STD)
+F14 & g::Move(100,  50, W_M,   100)
+F14 & b::Move(100, 100, W_M, H_STD)
+; right
+F14 & y::Move(100,   0, W_S, H_STD)
+F14 & h::Move(100,  50, W_S,   100)
+F14 & n::Move(100, 100, W_S, H_STD)
