@@ -25,32 +25,41 @@ F14 & PgUp::#^Left
 ;
 
 ; helpers
-Move(x_pct, y_pct, w_pct, h_pct, i, j) {
-    ; debug
-    global msg
-    ; get working area, account for taskbar
-    MonitorGetWorkArea(1, &left, &top, &right, &bottom)
-    ; widht and x
-    w_area := right - left
-    w := w_area * w_pct/100
-    x_max := w_area - w
-    x := left + x_max * x_pct/100
-    ; height and y
-    h_area := bottom - top
-    h := h_area * h_pct/100
-    y_max := h_area - h
-    y := top + y_max * y_pct/100
-    ; move active window
-    ; x := Integer(x), y = Integer(y), w = Integer(w), h = Integer(h)
-    WinMove x, y, w, h, "A"
-    ; remember window state
-    global win_states
-    pid := WinGetPID("A")
-    win_states[pid] := {i: i, j: j} 
-    ; debug
-    ; msg := Format("{1},{2}", win_states[pid].i ,win_states[pid].j)
-    ; msg := Format("{1}, {2}, {3}, {4}", Left, Top, Right, Bottom)
-    ; msg := Format("Move(x={1}, y={2}, w={3}, h={4})", x, y, w, h)
+Moving(i, j){
+    Move(_name) {
+        ; debug
+        global msg
+        ; get presets
+        x_pct := presets[i][j][1]
+        y_pct := presets[i][j][2]
+        w_pct := presets[i][j][3]
+        h_pct := presets[i][j][4]
+        ; get working area, account for taskbar
+        MonitorGetWorkArea(1, &left, &top, &right, &bottom)
+        ; widht and x
+        w_area := right - left
+        w := w_area * w_pct/100
+        x_max := w_area - w
+        x := left + x_max * x_pct/100
+        ; height and y
+        h_area := bottom - top
+        h := h_area * h_pct/100
+        y_max := h_area - h
+        y := top + y_max * y_pct/100
+        ; move active window
+        ; x := Integer(x), y = Integer(y), w = Integer(w), h = Integer(h)
+        WinMove x, y, w, h, "A"
+        ; remember window state
+        global win_states
+        pid := WinGetPID("A")
+        win_states[pid] := {i: i, j: j} 
+        ; debug
+        ; msg := Format("{1},{2}", win_states[pid].i ,win_states[pid].j)
+        ; msg := Format("{1}, {2}, {3}, {4}", Left, Top, Right, Bottom)
+        ; msg := Format("Move(x={1}, y={2}, w={3}, h={4})", x, y, w, h)
+    }
+
+    return Move
 }
 
 ; consts
@@ -60,35 +69,35 @@ W_L := 66.67
 H_STD := 85
 
 ; presets
-moves := [
+presets := [
     [ ; left
-        (i, j) => (_) => Move(  0,   0, W_S, H_STD, i, j),
-        (i, j) => (_) => Move(  0,  50, W_S,   100, i, j),
-        (i, j) => (_) => Move(  0, 100, W_S, H_STD, i, j), ], 
+        [  0,   0, W_S, H_STD],
+        [  0,  50, W_S,   100],
+        [  0, 100, W_S, H_STD], ], 
     [ ; left wide
-        (i, j) => (_) => Move(  0,   0, W_M, H_STD, i, j),
-        (i, j) => (_) => Move(  0,  50, W_M,   100, i, j),
-        (i, j) => (_) => Move(  0, 100, W_M, H_STD, i, j), ], 
+        [  0,   0, W_M, H_STD],
+        [  0,  50, W_M,   100],
+        [  0, 100, W_M, H_STD], ], 
     [ ; central
-        (i, j) => (_) => Move( 50,   0, W_S, H_STD, i, j),
-        (i, j) => (_) => Move( 50,  50, W_S,   100, i, j),
-        (i, j) => (_) => Move( 50, 100, W_S, H_STD, i, j), ], 
+        [ 50,   0, W_S, H_STD],
+        [ 50,  50, W_S,   100],
+        [ 50, 100, W_S, H_STD], ], 
     [ ; central wide
-        (i, j) => (_) => Move( 50,   0, W_M, H_STD, i, j),
-        (i, j) => (_) => Move( 50,  50, W_M,   100, i, j),
-        (i, j) => (_) => Move( 50, 100, W_M, H_STD, i, j), ], 
+        [ 50,   0, W_M, H_STD],
+        [ 50,  50, W_M,   100],
+        [ 50, 100, W_M, H_STD], ], 
     [ ; central max
-        (i, j) => (_) => Move(100,   0, W_L, H_STD, i, j),
-        (i, j) => (_) => Move(100,  50, W_L,   100, i, j),
-        (i, j) => (_) => Move(100, 100, W_L, H_STD, i, j), ], 
+        [100,   0, W_L, H_STD],
+        [100,  50, W_L,   100],
+        [100, 100, W_L, H_STD], ], 
     [ ; right wide
-        (i, j) => (_) => Move(100,   0, W_M, H_STD, i, j),
-        (i, j) => (_) => Move(100,  50, W_M,   100, i, j),
-        (i, j) => (_) => Move(100, 100, W_M, H_STD, i, j), ], 
+        [100,   0, W_M, H_STD],
+        [100,  50, W_M,   100],
+        [100, 100, W_M, H_STD], ], 
     [ ; right
-        (i, j) => (_) => Move(100,   0, W_S, H_STD, i, j),
-        (i, j) => (_) => Move(100,  50, W_S,   100, i, j),
-        (i, j) => (_) => Move(100, 100, W_S, H_STD, i, j), ],
+        [100,   0, W_S, H_STD],
+        [100,  50, W_S,   100],
+        [100, 100, W_S, H_STD], ],
 ]
 
 ; keys activated
@@ -106,7 +115,7 @@ keys := [
 for i, col in keys {
     for j, key in col {
         try {
-            Hotkey Format("F14 & {}", key), moves[i][j](i, j)
+            Hotkey Format("F14 & {}", key), Moving(i, j)
         } catch {
             return
         }
