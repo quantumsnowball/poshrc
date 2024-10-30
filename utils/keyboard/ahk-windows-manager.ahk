@@ -94,7 +94,6 @@ Moving(i, j) {
         y_max := h_area - h
         y := top + y_max * y_pct/100
         ; move active window
-        ; x := Integer(x), y = Integer(y), w = Integer(w), h = Integer(h)
         WinMove x, y, w, h, "A"
         ; remember window state
         global win_states
