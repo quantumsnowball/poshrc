@@ -6,6 +6,7 @@
 
 ; global state variable
 active := true
+win_states := Map()
 msg := ""
 
 ; KEY REMAPS

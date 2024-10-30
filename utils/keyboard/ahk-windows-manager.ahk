@@ -14,8 +14,6 @@ F14 & \::AltTab
 F14 & Tab::ShiftAltTab
 
 ; workspace switch
-F14 & ]::#^Right
-F14 & [::#^Left
 F14 & PgDn::#^Right
 F14 & PgUp::#^Left
 
@@ -24,29 +22,6 @@ F14 & PgUp::#^Left
 ; move and resize
 ;
 
-; helpers
-Move(x_pct, y_pct, w_pct, h_pct) {
-    ; get working area, account for taskbar
-    MonitorGetWorkArea(1, &left, &top, &right, &bottom)
-    ; widht and x
-    w_area := right - left
-    w := w_area * w_pct/100
-    x_max := w_area - w
-    x := left + x_max * x_pct/100
-    ; height and y
-    h_area := bottom - top
-    h := h_area * h_pct/100
-    y_max := h_area - h
-    y := top + y_max * y_pct/100
-    ; move active window
-    ; x := Integer(x), y = Integer(y), w = Integer(w), h = Integer(h)
-    WinMove x, y, w, h, "A"
-    ; debug
-    global msg
-    ; msg := Format("{1}, {2}, {3}, {4}", Left, Top, Right, Bottom)
-    ; msg := Format("Move(x={1}, y={2}, w={3}, h={4})", x, y, w, h)
-}
-
 ; consts
 W_S := 33.33
 W_M := 50.0
@@ -54,35 +29,35 @@ W_L := 66.67
 H_STD := 85
 
 ; presets
-moves := [
+presets := [
     [ ; left
-        (_) => Move(  0,   0, W_S, H_STD),
-        (_) => Move(  0,  50, W_S,   100),
-        (_) => Move(  0, 100, W_S, H_STD), ], 
+        [  0,   0, W_S, H_STD],
+        [  0,  50, W_S,   100],
+        [  0, 100, W_S, H_STD], ], 
     [ ; left wide
-        (_) => Move(  0,   0, W_M, H_STD),
-        (_) => Move(  0,  50, W_M,   100),
-        (_) => Move(  0, 100, W_M, H_STD), ], 
+        [  0,   0, W_M, H_STD],
+        [  0,  50, W_M,   100],
+        [  0, 100, W_M, H_STD], ], 
     [ ; central
-        (_) => Move( 50,   0, W_S, H_STD),
-        (_) => Move( 50,  50, W_S,   100),
-        (_) => Move( 50, 100, W_S, H_STD), ], 
+        [ 50,   0, W_S, H_STD],
+        [ 50,  50, W_S,   100],
+        [ 50, 100, W_S, H_STD], ], 
     [ ; central wide
-        (_) => Move( 50,   0, W_M, H_STD),
-        (_) => Move( 50,  50, W_M,   100),
-        (_) => Move( 50, 100, W_M, H_STD), ], 
+        [ 50,   0, W_M, H_STD],
+        [ 50,  50, W_M,   100],
+        [ 50, 100, W_M, H_STD], ], 
     [ ; central max
-        (_) => Move(100,   0, W_L, H_STD),
-        (_) => Move(100,  50, W_L,   100),
-        (_) => Move(100, 100, W_L, H_STD), ], 
+        [100,   0, W_L, H_STD],
+        [100,  50, W_L,   100],
+        [100, 100, W_L, H_STD], ], 
     [ ; right wide
-        (_) => Move(100,   0, W_M, H_STD),
-        (_) => Move(100,  50, W_M,   100),
-        (_) => Move(100, 100, W_M, H_STD), ], 
+        [100,   0, W_M, H_STD],
+        [100,  50, W_M,   100],
+        [100, 100, W_M, H_STD], ], 
     [ ; right
-        (_) => Move(100,   0, W_S, H_STD),
-        (_) => Move(100,  50, W_S,   100),
-        (_) => Move(100, 100, W_S, H_STD), ],
+        [100,   0, W_S, H_STD],
+        [100,  50, W_S,   100],
+        [100, 100, W_S, H_STD], ],
 ]
 
 ; keys activated
@@ -96,14 +71,75 @@ keys := [
     ["u","j","m"],
 ]
 
+; helpers
+Moving(i, j) {
+    Move(_name) {
+        ; debug
+        global msg
+        ; get presets
+        x_pct := presets[i][j][1]
+        y_pct := presets[i][j][2]
+        w_pct := presets[i][j][3]
+        h_pct := presets[i][j][4]
+        ; get working area, account for taskbar
+        MonitorGetWorkArea(1, &left, &top, &right, &bottom)
+        ; widht and x
+        w_area := right - left
+        w := w_area * w_pct/100
+        x_max := w_area - w
+        x := left + x_max * x_pct/100
+        ; height and y
+        h_area := bottom - top
+        h := h_area * h_pct/100
+        y_max := h_area - h
+        y := top + y_max * y_pct/100
+        ; move active window
+        ; x := Integer(x), y = Integer(y), w = Integer(w), h = Integer(h)
+        WinMove x, y, w, h, "A"
+        ; remember window state
+        global win_states
+        pid := WinGetID("A")
+        win_states[pid] := {i: i, j: j} 
+        ; debug
+        ; msg := Format("{1},{2}", win_states[pid].i ,win_states[pid].j)
+        ; msg := Format("{1}, {2}, {3}, {4}", Left, Top, Right, Bottom)
+        ; msg := Format("Move(x={1}, y={2}, w={3}, h={4})", x, y, w, h)
+    }
+
+    return Move
+}
+
+Jump(m, n) {
+    pid := WinGetID("A")
+    try {
+        p := win_states[pid]
+        i := p.i + m
+        j := p.j + n
+        if (1<=i && i<=keys.Length) {
+            j := j<1 ? 3 : j>3 ? 1 : j
+            Moving(i, j)("-")
+        }
+    } catch {
+        Moving(4, 2)("-")
+    }
+}
+JumpLeft  := () => Jump(-1,  0)
+JumpRight := () => Jump(+1,  0)
+JumpUp    := () => Jump( 0, -1)
+JumpDown  := () => Jump( 0, +1)
+
 ; assignment
 for i, col in keys {
     for j, key in col {
         try {
-            Hotkey Format("F14 & {}", key), moves[i][j]
+            Hotkey Format("F14 & {}", key), Moving(i, j)
         } catch {
             return
         }
     }
 }
 
+F14 & [::JumpLeft
+F14 & ]::JumpRight           
+F14 & =::JumpUp
+F14 & '::JumpDown
