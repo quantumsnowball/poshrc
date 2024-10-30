@@ -113,7 +113,10 @@ MoveHorizontal(n) {
     pid := WinGetPID("A")
     try {
         p := win_states[pid]
-        Moving(p.i+n, p.j)("-")
+        i := p.i + n
+        if (1<=i && i<=keys.Length) {
+            Moving(i, p.j)("-")
+        }
     } catch {
         Moving(4, 2)("-")
     }
