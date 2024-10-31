@@ -29,7 +29,7 @@ W_L := 66.67
 H_STD := 85
 
 ; presets
-presets := [
+PRESETS := [
     [ ; left
         [  0,   0, W_S, H_STD],
         [  0,  50, W_S,   100],
@@ -61,7 +61,7 @@ presets := [
 ]
 
 ; keys activated
-keys := [
+KEYS := [
     ["q","a","z"],
     ["w","s","x"],
     ["e","d","c"],
@@ -77,10 +77,10 @@ Moving(i, j) {
         ; debug
         global msg
         ; get presets
-        x_pct := presets[i][j][1]
-        y_pct := presets[i][j][2]
-        w_pct := presets[i][j][3]
-        h_pct := presets[i][j][4]
+        x_pct := PRESETS[i][j][1]
+        y_pct := PRESETS[i][j][2]
+        w_pct := PRESETS[i][j][3]
+        h_pct := PRESETS[i][j][4]
         ; get working area, account for taskbar
         MonitorGetWorkArea(1, &left, &top, &right, &bottom)
         ; widht and x
@@ -114,7 +114,7 @@ Jump(m, n) {
         p := win_states[pid]
         i := p.i + m
         j := p.j + n
-        if (1<=i && i<=keys.Length) {
+        if (1<=i && i<=KEYS.Length) {
             j := j<1 ? 3 : j>3 ? 1 : j
             Moving(i, j)("-")
         }
@@ -128,7 +128,7 @@ JumpUp    := () => Jump( 0, -1)
 JumpDown  := () => Jump( 0, +1)
 
 ; assignment
-for i, col in keys {
+for i, col in KEYS {
     for j, key in col {
         try {
             Hotkey Format("F14 & {}", key), Moving(i, j)
