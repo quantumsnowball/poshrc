@@ -6,9 +6,7 @@ F14 & /::WinMinimize "A"
 
 
 ; task switch
-F13 & ]::AltTab
 F13 & \::AltTab
-F13 & [::ShiftAltTab
 F13 & Tab::ShiftAltTab
 F14 & \::AltTab
 F14 & Tab::ShiftAltTab

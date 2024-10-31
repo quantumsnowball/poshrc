@@ -9,20 +9,36 @@ F13 & j::Down
 F13 & k::Up
 F13 & l::Right
 
-; Home, End, PgUp, PgDown
+; navigate
 F13 & n::Home
 F13 & .::End
-F13 & m::PgDn
-F13 & ,::PgUp
+; F13 & u::PgUp
 F13 & d::PgDn
-F13 & u::PgUp
+F13 & `;::PgUp
+F13 & '::PgDn
 
-; word jumping, changing, deleting, renaming
-F13 & w::^Right
+; jump
+F13 & ,::^Left
+F13 & m::^Right
 F13 & b::^Left
+F13 & w::^Right
+
+; select
+F13 & i::^+Left
+F13 & u::^+Right
+F13 & y::+Home
+F13 & o::+End
+F13 & v::Send "{Home}+{End}"
+
+; edit
 F13 & c::^Del
 F13 & x::Del
 F13 & r::F2
+F13 & [::^Backspace
+F13 & ]::^Del
+
+; undo
+F13 & z::^z
 
 ; full screen toggle
 F13 & Enter::!Enter
