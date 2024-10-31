@@ -43,4 +43,9 @@ F13 & z::^z
 ; full screen toggle
 F13 & Enter::!Enter
 
+; datetime
+F13 & 1::Send FormatTime("", "yyyy-MM-dd")
+F13 & 2::Send FormatTime("", "yyyy-MM-dd HH:mm:ss")
+F13 & 3::Send FormatTime("", "yyyy-MM-dd_HH.mm.ss")
+F13 & 4::Send FormatTime("", "yyyyMMdd_HHmmss")
 
