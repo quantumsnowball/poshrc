@@ -89,6 +89,7 @@ KEYS := [
     ["","y","h","n",""],
     ["","u","j","m",""],
 ]
+N_KEY := KEYS[1].Length
 
 ; helpers
 Moving(i, j) {
@@ -134,7 +135,7 @@ Jump(m, n) {
         i := p.i + m
         j := p.j + n
         if (1<=i && i<=KEYS.Length) {
-            j := j<1 ? 5 : j>5 ? 1 : j
+            j := j<1 ? N_KEY : j>N_KEY ? 1 : j
             Moving(i, j)("-")
         }
     } catch {
