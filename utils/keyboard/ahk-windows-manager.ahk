@@ -1,7 +1,7 @@
 ; windows operations
 F13 & Home::WinKill "A"
-F14 & Home::WinKill "A"
 F13 & /::WinMinimize "A"
+F14 & Home::WinKill "A"
 F14 & /::WinMinimize "A"
 
 
@@ -12,6 +12,8 @@ F14 & \::AltTab
 F14 & Tab::ShiftAltTab
 
 ; workspace switch
+F13 & PgDn::#^Right
+F13 & PgUp::#^Left
 F14 & PgDn::#^Right
 F14 & PgUp::#^Left
 
@@ -136,6 +138,10 @@ for i, col in KEYS {
     }
 }
 
+F13 & Left::JumpLeft
+F13 & Right::JumpRight           
+F13 & Up::JumpUp
+F13 & Down::JumpDown
 F14 & [::JumpLeft
 F14 & ]::JumpRight           
 F14 & =::JumpUp
