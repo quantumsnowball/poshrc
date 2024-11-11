@@ -139,7 +139,7 @@ Jump(m, n) {
             Moving(i, j)("-")
         }
     } catch {
-        Moving(4, 2)("-")
+        Moving(4, 4)("-")
     }
 }
 JumpLeft  := () => Jump(-1,  0)
