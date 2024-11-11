@@ -4,9 +4,11 @@
 ; - better map these keys outside ahk using win registry
 
 ; media keys
-F14 & Up::Volume_Up
-F14 & Down::Volume_Down
-F14 & RShift::Media_Play_Pause
-F14 & Right::Media_Next
-F14 & Left::Media_Prev
+F14 & '::Volume_Up
+F14 & /::Volume_Down
+F14 & .::Media_Play_Pause
+F14 & `;::Media_Play_Pause
+F14 & Space::Media_Play_Pause
+F14 & ]::Media_Next
+F14 & [::Media_Prev
 

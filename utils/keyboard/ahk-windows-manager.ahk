@@ -1,21 +1,25 @@
 ; windows operations
-F13 & Home::WinKill "A"
-F13 & /::WinMinimize "A"
-F14 & Home::WinKill "A"
-F14 & /::WinMinimize "A"
+F13 & Backspace::WinKill "A"
+F13 & RShift::WinMinimize "A"
+F14 & Backspace::WinKill "A"
+F14 & RShift::WinMinimize "A"
 
 
 ; task switch
 F13 & \::AltTab
 F13 & Tab::ShiftAltTab
+F13 & PgDn::AltTab
+F13 & PgUp::ShiftAltTab
 F14 & \::AltTab
 F14 & Tab::ShiftAltTab
+F14 & PgDn::AltTab
+F14 & PgUp::ShiftAltTab
 
 ; workspace switch
-F13 & PgDn::#^Right
-F13 & PgUp::#^Left
-F14 & PgDn::#^Right
-F14 & PgUp::#^Left
+F13 & Del::#^Right
+F13 & Home::#^Left
+F14 & Del::#^Right
+F14 & Home::#^Left
 
 
 ;
@@ -142,7 +146,7 @@ F13 & Left::JumpLeft
 F13 & Right::JumpRight           
 F13 & Up::JumpUp
 F13 & Down::JumpDown
-F14 & [::JumpLeft
-F14 & ]::JumpRight           
-F14 & =::JumpUp
-F14 & '::JumpDown
+F14 & Left::JumpLeft
+F14 & Right::JumpRight           
+F14 & Up::JumpUp
+F14 & Down::JumpDown
