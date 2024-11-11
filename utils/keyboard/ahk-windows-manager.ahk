@@ -30,49 +30,64 @@ F14 & Home::#^Left
 W_S := 33.33
 W_M := 50.0
 W_L := 66.67
+H_M := 50
 H_STD := 85
 
 ; presets
 PRESETS := [
     [ ; left
+        [  0,   0, W_S, H_M  ],
         [  0,   0, W_S, H_STD],
         [  0,  50, W_S,   100],
-        [  0, 100, W_S, H_STD], ], 
+        [  0, 100, W_S, H_STD],
+        [  0, 100, W_S, H_M  ], ], 
     [ ; left wide
+        [  0,   0, W_M, H_M  ],
         [  0,   0, W_M, H_STD],
         [  0,  50, W_M,   100],
-        [  0, 100, W_M, H_STD], ], 
+        [  0, 100, W_M, H_STD],
+        [  0, 100, W_M, H_M  ], ], 
     [ ; central
+        [ 50,   0, W_S, H_M  ],
         [ 50,   0, W_S, H_STD],
         [ 50,  50, W_S,   100],
-        [ 50, 100, W_S, H_STD], ], 
+        [ 50, 100, W_S, H_STD],
+        [ 50, 100, W_S, H_M  ], ], 
     [ ; central wide
+        [ 50,   0, W_M, H_M  ],
         [ 50,   0, W_M, H_STD],
         [ 50,  50, W_M,   100],
-        [ 50, 100, W_M, H_STD], ], 
+        [ 50, 100, W_M, H_STD],
+        [ 50, 100, W_M, H_M  ], ], 
     [ ; central max
+        [100,   0, W_L, H_M  ],
         [100,   0, W_L, H_STD],
         [100,  50, W_L,   100],
-        [100, 100, W_L, H_STD], ], 
+        [100, 100, W_L, H_STD],
+        [100, 100, W_L, H_M  ], ], 
     [ ; right wide
+        [100,   0, W_M, H_M  ],
         [100,   0, W_M, H_STD],
         [100,  50, W_M,   100],
-        [100, 100, W_M, H_STD], ], 
+        [100, 100, W_M, H_STD],
+        [100, 100, W_M, H_M  ], ], 
     [ ; right
+        [100,   0, W_S, H_M  ],
         [100,   0, W_S, H_STD],
         [100,  50, W_S,   100],
-        [100, 100, W_S, H_STD], ],
+        [100, 100, W_S, H_STD],
+        [100, 100, W_S, H_M  ], ],
 ]
 
 ; keys activated
 KEYS := [
-    ["q","a","z"],
-    ["w","s","x"],
-    ["e","d","c"],
-    ["r","f","v"],
-    ["t","g","b"],
-    ["y","h","n"],
-    ["u","j","m"],
+    ["","q","a","z",""],
+    ["","w","s","x",""],
+    ["","e","d","c",""],
+    ["","r","f","v",""],
+    ["","t","g","b",""],
+    ["","y","h","n",""],
+    ["","u","j","m",""],
 ]
 
 ; helpers
@@ -119,7 +134,7 @@ Jump(m, n) {
         i := p.i + m
         j := p.j + n
         if (1<=i && i<=KEYS.Length) {
-            j := j<1 ? 3 : j>3 ? 1 : j
+            j := j<1 ? 5 : j>5 ? 1 : j
             Moving(i, j)("-")
         }
     } catch {
@@ -135,7 +150,8 @@ JumpDown  := () => Jump( 0, +1)
 for i, col in KEYS {
     for j, key in col {
         try {
-            Hotkey Format("F14 & {}", key), Moving(i, j)
+            if (key != "")
+                Hotkey Format("F14 & {}", key), Moving(i, j)
         } catch {
             return
         }
