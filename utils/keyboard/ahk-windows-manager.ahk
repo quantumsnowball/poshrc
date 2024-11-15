@@ -47,18 +47,18 @@ PRESETS := [
         [  0,  50, W_M,   100],
         [  0, 100, W_M, H_STD],
         [  0, 100, W_M, H_M  ], ], 
-    [ ; central
-        [ 50,   0, W_S, H_M  ],
-        [ 50,   0, W_S, H_STD],
-        [ 50,  50, W_S,   100],
-        [ 50, 100, W_S, H_STD],
-        [ 50, 100, W_S, H_M  ], ], 
     [ ; central wide
         [ 50,   0, W_M, H_M  ],
         [ 50,   0, W_M, H_STD],
         [ 50,  50, W_M,   100],
         [ 50, 100, W_M, H_STD],
         [ 50, 100, W_M, H_M  ], ], 
+    [ ; central
+        [ 50,   0, W_S, H_M  ],
+        [ 50,   0, W_S, H_STD],
+        [ 50,  50, W_S,   100],
+        [ 50, 100, W_S, H_STD],
+        [ 50, 100, W_S, H_M  ], ], 
     [ ; central max
         [100,   0, W_L, H_M  ],
         [100,   0, W_L, H_STD],
@@ -81,13 +81,13 @@ PRESETS := [
 
 ; keys activated
 KEYS := [
-    ["","q","a","z",""],
-    ["","w","s","x",""],
-    ["","e","d","c",""],
-    ["","r","f","v",""],
-    ["","t","g","b",""],
-    ["","y","h","n",""],
-    ["","u","j","m",""],
+    ["q"," ","a"," ","z"],
+    [" ","w","s","x"," "],
+    [" ","e","d","c"," "],
+    [" "," "," "," "," "],
+    [" ","r","f","v"," "],
+    [" ","t","g","b"," "],
+    ["y"," ","h"," ","n"],
 ]
 N_KEY := KEYS[1].Length
 
@@ -151,7 +151,7 @@ JumpDown  := () => Jump( 0, +1)
 for i, col in KEYS {
     for j, key in col {
         try {
-            if (key != "")
+            if (key != " ")
                 Hotkey Format("F14 & {}", key), Moving(i, j)
         } catch {
             return
