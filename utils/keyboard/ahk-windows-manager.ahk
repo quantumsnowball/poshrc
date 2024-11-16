@@ -34,62 +34,69 @@ F14 & Home::#^Left
 ;
 
 ; consts
+X_LEFT := 0
+X_CENTER := 50
+X_RIGHT := 100
+Y_TOP := 0
+Y_CENTER := 50
+Y_BOTTOM := 100
 W_S := 33.33
 W_M := 50.0
 W_L := 66.67
 H_M := 50
 H_STD := 85
+H_FULL := 100
 
 ; presets
 PRESETS := [
     [ ; left
-        [  0,   0, W_S, H_M  ],
-        [  0,   0, W_S, H_STD],
-        [  0,  50, W_S,   100],
-        [  0, 100, W_S, H_STD],
-        [  0, 100, W_S, H_M  ], ], 
+        [X_LEFT  , Y_TOP   , W_S, H_M   ],
+        [X_LEFT  , Y_TOP   , W_S, H_STD ],
+        [X_LEFT  , Y_CENTER, W_S, H_FULL],
+        [X_LEFT  , Y_BOTTOM, W_S, H_STD ],
+        [X_LEFT  , Y_BOTTOM, W_S, H_M   ], ], 
     [ ; left wide
-        [  0,   0, W_M, H_M  ],
-        [  0,   0, W_M, H_STD],
-        [  0,  50, W_M,   100],
-        [  0, 100, W_M, H_STD],
-        [  0, 100, W_M, H_M  ], ], 
+        [X_LEFT  , Y_TOP   , W_M, H_M   ],
+        [X_LEFT  , Y_TOP   , W_M, H_STD ],
+        [X_LEFT  , Y_CENTER, W_M, H_FULL],
+        [X_LEFT  , Y_BOTTOM, W_M, H_STD ],
+        [X_LEFT  , Y_BOTTOM, W_M, H_M   ], ], 
     [ ; central max left
-        [  0,   0, W_L, H_M  ],
-        [  0,   0, W_L, H_STD],
-        [  0,  50, W_L,   100],
-        [  0, 100, W_L, H_STD],
-        [  0, 100, W_L, H_M  ], ], 
+        [X_LEFT  , Y_TOP   , W_L, H_M   ],
+        [X_LEFT  , Y_TOP   , W_L, H_STD ],
+        [X_LEFT  , Y_CENTER, W_L, H_FULL],
+        [X_LEFT  , Y_BOTTOM, W_L, H_STD ],
+        [X_LEFT  , Y_BOTTOM, W_L, H_M   ], ], 
     [ ; central wide
-        [ 50,   0, W_M, H_M  ],
-        [ 50,   0, W_M, H_STD],
-        [ 50,  50, W_M,   100],
-        [ 50, 100, W_M, H_STD],
-        [ 50, 100, W_M, H_M  ], ], 
+        [X_CENTER, Y_TOP   , W_M, H_M   ],
+        [X_CENTER, Y_TOP   , W_M, H_STD ],
+        [X_CENTER, Y_CENTER, W_M, H_FULL],
+        [X_CENTER, Y_BOTTOM, W_M, H_STD ],
+        [X_CENTER, Y_BOTTOM, W_M, H_M   ], ], 
     [ ; central
-        [ 50,   0, W_S, H_M  ],
-        [ 50,   0, W_S, H_STD],
-        [ 50,  50, W_S,   100],
-        [ 50, 100, W_S, H_STD],
-        [ 50, 100, W_S, H_M  ], ], 
+        [X_CENTER, Y_TOP   , W_S, H_M   ],
+        [X_CENTER, Y_TOP   , W_S, H_STD ],
+        [X_CENTER, Y_CENTER, W_S, H_FULL],
+        [X_CENTER, Y_BOTTOM, W_S, H_STD ],
+        [X_CENTER, Y_BOTTOM, W_S, H_M   ], ], 
     [ ; central max right
-        [100,   0, W_L, H_M  ],
-        [100,   0, W_L, H_STD],
-        [100,  50, W_L,   100],
-        [100, 100, W_L, H_STD],
-        [100, 100, W_L, H_M  ], ], 
+        [X_RIGHT , Y_TOP   , W_L, H_M   ],
+        [X_RIGHT , Y_TOP   , W_L, H_STD ],
+        [X_RIGHT , Y_CENTER, W_L, H_FULL],
+        [X_RIGHT , Y_BOTTOM, W_L, H_STD ],
+        [X_RIGHT , Y_BOTTOM, W_L, H_M   ], ], 
     [ ; right wide
-        [100,   0, W_M, H_M  ],
-        [100,   0, W_M, H_STD],
-        [100,  50, W_M,   100],
-        [100, 100, W_M, H_STD],
-        [100, 100, W_M, H_M  ], ], 
+        [X_RIGHT , Y_TOP   , W_M, H_M   ],
+        [X_RIGHT , Y_TOP   , W_M, H_STD ],
+        [X_RIGHT , Y_CENTER, W_M, H_FULL],
+        [X_RIGHT , Y_BOTTOM, W_M, H_STD ],
+        [X_RIGHT , Y_BOTTOM, W_M, H_M   ], ], 
     [ ; right
-        [100,   0, W_S, H_M  ],
-        [100,   0, W_S, H_STD],
-        [100,  50, W_S,   100],
-        [100, 100, W_S, H_STD],
-        [100, 100, W_S, H_M  ], ],
+        [X_RIGHT , Y_TOP   , W_S, H_M   ],
+        [X_RIGHT , Y_TOP   , W_S, H_STD ],
+        [X_RIGHT , Y_CENTER, W_S, H_FULL],
+        [X_RIGHT , Y_BOTTOM, W_S, H_STD ],
+        [X_RIGHT , Y_BOTTOM, W_S, H_M   ], ],
 ]
 
 ; keys activated
