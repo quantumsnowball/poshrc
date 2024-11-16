@@ -40,6 +40,7 @@ X_RIGHT := 100
 Y_TOP := 0
 Y_CENTER := 50
 Y_BOTTOM := 100
+W_T := 25.0
 W_S := 33.33
 W_M := 50.0
 W_L := 66.67
@@ -49,6 +50,12 @@ H_FULL := 100
 
 ; presets
 PRESETS := [
+    [ ; left tiny
+        [X_LEFT  , Y_TOP   , W_T, H_M   ],
+        [X_LEFT  , Y_TOP   , W_T, H_STD ],
+        [X_LEFT  , Y_CENTER, W_T, H_FULL],
+        [X_LEFT  , Y_BOTTOM, W_T, H_STD ],
+        [X_LEFT  , Y_BOTTOM, W_T, H_M   ], ], 
     [ ; left
         [X_LEFT  , Y_TOP   , W_S, H_M   ],
         [X_LEFT  , Y_TOP   , W_S, H_STD ],
@@ -97,10 +104,17 @@ PRESETS := [
         [X_RIGHT , Y_CENTER, W_S, H_FULL],
         [X_RIGHT , Y_BOTTOM, W_S, H_STD ],
         [X_RIGHT , Y_BOTTOM, W_S, H_M   ], ],
+    [ ; right tiny
+        [X_RIGHT , Y_TOP   , W_T, H_M   ],
+        [X_RIGHT , Y_TOP   , W_T, H_STD ],
+        [X_RIGHT , Y_CENTER, W_T, H_FULL],
+        [X_RIGHT , Y_BOTTOM, W_T, H_STD ],
+        [X_RIGHT , Y_BOTTOM, W_T, H_M   ], ],
 ]
 
 ; keys activated
 KEYS := [
+    [" "," "," "," "," "],
     ["q"," ","a"," ","z"],
     [" ","w","s","x"," "],
     [" "," "," "," "," "],
@@ -109,6 +123,7 @@ KEYS := [
     [" ","r","f","v"," "],
     [" ","t","g","b"," "],
     ["y"," ","h"," ","n"],
+    [" "," "," "," "," "],
 ]
 N_KEY := KEYS[1].Length
 
