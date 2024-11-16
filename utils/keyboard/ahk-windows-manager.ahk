@@ -125,7 +125,7 @@ KEYS := [
     ["e"," ","d"," ","c"],
     [" "," "," "," "," "],
 ]
-N_KEY := KEYS[1].Length
+N_KEY := PRESETS[1].Length
 
 ; helpers
 Moving(i, j) {
@@ -170,7 +170,7 @@ Jump(m, n) {
         p := win_states[pid]
         i := p.i + m
         j := p.j + n
-        if (1<=i && i<=KEYS.Length) {
+        if (1<=i && i<=PRESETS.Length) {
             j := j<1 ? N_KEY : j>N_KEY ? 1 : j
             Moving(i, j)("-")
         }
