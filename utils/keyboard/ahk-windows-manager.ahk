@@ -169,7 +169,8 @@ Jump(m, n) {
             Moving(i, j)("-")
         }
     } catch {
-        Moving(4, 4)("-")
+        ; default is central full
+        Moving(7, 3)("-")
     }
 }
 JumpLeft  := () => Jump(-1,  0)
