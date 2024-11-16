@@ -40,11 +40,11 @@ X_RIGHT := 100
 Y_TOP := 0
 Y_CENTER := 50
 Y_BOTTOM := 100
-W_T := 25.0
-W_S := 33.33
-W_M := 50.0
-W_L := 66.67
-W_G := 75.0
+W_TINY    := 25.0
+W_SMALL   := 33.33
+W_MEDIUM  := 50.0
+W_LARGE   := 66.67
+W_GIANT   := 75.0
 H_M := 50
 H_STD := 85
 H_FULL := 100
@@ -52,71 +52,71 @@ H_FULL := 100
 ; presets
 PRESETS := [
     [ ; left tiny
-        [X_LEFT  , Y_TOP   , W_T, H_M   , ""  ],
-        [X_LEFT  , Y_TOP   , W_T, H_STD , ""  ],
-        [X_LEFT  , Y_CENTER, W_T, H_FULL, ""  ],
-        [X_LEFT  , Y_BOTTOM, W_T, H_STD , ""  ],
-        [X_LEFT  , Y_BOTTOM, W_T, H_M   , ""  ], ], 
+        [X_LEFT  , Y_TOP   , W_TINY   , H_M   , ""  ],
+        [X_LEFT  , Y_TOP   , W_TINY   , H_STD , ""  ],
+        [X_LEFT  , Y_CENTER, W_TINY   , H_FULL, ""  ],
+        [X_LEFT  , Y_BOTTOM, W_TINY   , H_STD , ""  ],
+        [X_LEFT  , Y_BOTTOM, W_TINY   , H_M   , ""  ], ], 
     [ ; left
-        [X_LEFT  , Y_TOP   , W_S, H_M   , "q" ],
-        [X_LEFT  , Y_TOP   , W_S, H_STD , ""  ],
-        [X_LEFT  , Y_CENTER, W_S, H_FULL, "a" ],
-        [X_LEFT  , Y_BOTTOM, W_S, H_STD , ""  ],
-        [X_LEFT  , Y_BOTTOM, W_S, H_M   , "z" ], ], 
+        [X_LEFT  , Y_TOP   , W_SMALL  , H_M   , "q" ],
+        [X_LEFT  , Y_TOP   , W_SMALL  , H_STD , ""  ],
+        [X_LEFT  , Y_CENTER, W_SMALL  , H_FULL, "a" ],
+        [X_LEFT  , Y_BOTTOM, W_SMALL  , H_STD , ""  ],
+        [X_LEFT  , Y_BOTTOM, W_SMALL  , H_M   , "z" ], ], 
     [ ; left wide
-        [X_LEFT  , Y_TOP   , W_M, H_M   , ""  ],
-        [X_LEFT  , Y_TOP   , W_M, H_STD , ""  ],
-        [X_LEFT  , Y_CENTER, W_M, H_FULL, "r" ],
-        [X_LEFT  , Y_BOTTOM, W_M, H_STD , ""  ],
-        [X_LEFT  , Y_BOTTOM, W_M, H_M   , ""  ], ], 
+        [X_LEFT  , Y_TOP   , W_MEDIUM , H_M   , ""  ],
+        [X_LEFT  , Y_TOP   , W_MEDIUM , H_STD , ""  ],
+        [X_LEFT  , Y_CENTER, W_MEDIUM , H_FULL, "r" ],
+        [X_LEFT  , Y_BOTTOM, W_MEDIUM , H_STD , ""  ],
+        [X_LEFT  , Y_BOTTOM, W_MEDIUM , H_M   , ""  ], ], 
     [ ; central max left
-        [X_LEFT  , Y_TOP   , W_L, H_M   , ""  ],
-        [X_LEFT  , Y_TOP   , W_L, H_STD , ""  ],
-        [X_LEFT  , Y_CENTER, W_L, H_FULL, "t" ],
-        [X_LEFT  , Y_BOTTOM, W_L, H_STD , ""  ],
-        [X_LEFT  , Y_BOTTOM, W_L, H_M   , ""  ], ], 
+        [X_LEFT  , Y_TOP   , W_LARGE  , H_M   , ""  ],
+        [X_LEFT  , Y_TOP   , W_LARGE  , H_STD , ""  ],
+        [X_LEFT  , Y_CENTER, W_LARGE  , H_FULL, "t" ],
+        [X_LEFT  , Y_BOTTOM, W_LARGE  , H_STD , ""  ],
+        [X_LEFT  , Y_BOTTOM, W_LARGE  , H_M   , ""  ], ], 
     [ ; central wide
-        [X_CENTER, Y_TOP   , W_M, H_M   , ""  ],
-        [X_CENTER, Y_TOP   , W_M, H_STD , ""  ],
-        [X_CENTER, Y_CENTER, W_M, H_FULL, "w" ],
-        [X_CENTER, Y_BOTTOM, W_M, H_STD , "x" ],
-        [X_CENTER, Y_BOTTOM, W_M, H_M   , ""  ], ], 
+        [X_CENTER, Y_TOP   , W_MEDIUM , H_M   , ""  ],
+        [X_CENTER, Y_TOP   , W_MEDIUM , H_STD , ""  ],
+        [X_CENTER, Y_CENTER, W_MEDIUM , H_FULL, "w" ],
+        [X_CENTER, Y_BOTTOM, W_MEDIUM , H_STD , "x" ],
+        [X_CENTER, Y_BOTTOM, W_MEDIUM , H_M   , ""  ], ], 
     [ ; central wide max right
-        [X_RIGHT , Y_TOP   , W_G, H_M   , ""  ],
-        [X_RIGHT , Y_TOP   , W_G, H_STD , ""  ],
-        [X_RIGHT , Y_CENTER, W_G, H_FULL, "g" ],
-        [X_RIGHT , Y_BOTTOM, W_G, H_STD , "" ],
-        [X_RIGHT , Y_BOTTOM, W_G, H_M   , ""  ], ], 
+        [X_RIGHT , Y_TOP   , W_GIANT  , H_M   , ""  ],
+        [X_RIGHT , Y_TOP   , W_GIANT  , H_STD , ""  ],
+        [X_RIGHT , Y_CENTER, W_GIANT  , H_FULL, "g" ],
+        [X_RIGHT , Y_BOTTOM, W_GIANT  , H_STD , "" ],
+        [X_RIGHT , Y_BOTTOM, W_GIANT  , H_M   , ""  ], ], 
     [ ; central
-        [X_CENTER, Y_TOP   , W_S, H_M   , ""  ],
-        [X_CENTER, Y_TOP   , W_S, H_STD , ""  ],
-        [X_CENTER, Y_CENTER, W_S, H_FULL, "s" ],
-        [X_CENTER, Y_BOTTOM, W_S, H_STD , ""  ],
-        [X_CENTER, Y_BOTTOM, W_S, H_M   , ""  ], ], 
+        [X_CENTER, Y_TOP   , W_SMALL  , H_M   , ""  ],
+        [X_CENTER, Y_TOP   , W_SMALL  , H_STD , ""  ],
+        [X_CENTER, Y_CENTER, W_SMALL  , H_FULL, "s" ],
+        [X_CENTER, Y_BOTTOM, W_SMALL  , H_STD , ""  ],
+        [X_CENTER, Y_BOTTOM, W_SMALL  , H_M   , ""  ], ], 
     [ ; central max right
-        [X_RIGHT , Y_TOP   , W_L, H_M   , ""  ],
-        [X_RIGHT , Y_TOP   , W_L, H_STD , ""  ],
-        [X_RIGHT , Y_CENTER, W_L, H_FULL, "fb"],
-        [X_RIGHT , Y_BOTTOM, W_L, H_STD , ""  ],
-        [X_RIGHT , Y_BOTTOM, W_L, H_M   , ""  ], ], 
+        [X_RIGHT , Y_TOP   , W_LARGE  , H_M   , ""  ],
+        [X_RIGHT , Y_TOP   , W_LARGE  , H_STD , ""  ],
+        [X_RIGHT , Y_CENTER, W_LARGE  , H_FULL, "fb"],
+        [X_RIGHT , Y_BOTTOM, W_LARGE  , H_STD , ""  ],
+        [X_RIGHT , Y_BOTTOM, W_LARGE  , H_M   , ""  ], ], 
     [ ; right wide
-        [X_RIGHT , Y_TOP   , W_M, H_M   , ""  ],
-        [X_RIGHT , Y_TOP   , W_M, H_STD , ""  ],
-        [X_RIGHT , Y_CENTER, W_M, H_FULL, "v" ],
-        [X_RIGHT , Y_BOTTOM, W_M, H_STD , ""  ],
-        [X_RIGHT , Y_BOTTOM, W_M, H_M   , ""  ], ], 
+        [X_RIGHT , Y_TOP   , W_MEDIUM , H_M   , ""  ],
+        [X_RIGHT , Y_TOP   , W_MEDIUM , H_STD , ""  ],
+        [X_RIGHT , Y_CENTER, W_MEDIUM , H_FULL, "v" ],
+        [X_RIGHT , Y_BOTTOM, W_MEDIUM , H_STD , ""  ],
+        [X_RIGHT , Y_BOTTOM, W_MEDIUM , H_M   , ""  ], ], 
     [ ; right
-        [X_RIGHT , Y_TOP   , W_S, H_M   , "e" ],
-        [X_RIGHT , Y_TOP   , W_S, H_STD , ""  ],
-        [X_RIGHT , Y_CENTER, W_S, H_FULL, "d" ],
-        [X_RIGHT , Y_BOTTOM, W_S, H_STD , ""  ],
-        [X_RIGHT , Y_BOTTOM, W_S, H_M   , "c" ], ],
+        [X_RIGHT , Y_TOP   , W_SMALL  , H_M   , "e" ],
+        [X_RIGHT , Y_TOP   , W_SMALL  , H_STD , ""  ],
+        [X_RIGHT , Y_CENTER, W_SMALL  , H_FULL, "d" ],
+        [X_RIGHT , Y_BOTTOM, W_SMALL  , H_STD , ""  ],
+        [X_RIGHT , Y_BOTTOM, W_SMALL  , H_M   , "c" ], ],
     [ ; right tiny
-        [X_RIGHT , Y_TOP   , W_T, H_M   , ""  ],
-        [X_RIGHT , Y_TOP   , W_T, H_STD , ""  ],
-        [X_RIGHT , Y_CENTER, W_T, H_FULL, ""  ],
-        [X_RIGHT , Y_BOTTOM, W_T, H_STD , ""  ],
-        [X_RIGHT , Y_BOTTOM, W_T, H_M   , ""  ], ],
+        [X_RIGHT , Y_TOP   , W_TINY   , H_M   , ""  ],
+        [X_RIGHT , Y_TOP   , W_TINY   , H_STD , ""  ],
+        [X_RIGHT , Y_CENTER, W_TINY   , H_FULL, ""  ],
+        [X_RIGHT , Y_BOTTOM, W_TINY   , H_STD , ""  ],
+        [X_RIGHT , Y_BOTTOM, W_TINY   , H_M   , ""  ], ],
 ]
 
 
