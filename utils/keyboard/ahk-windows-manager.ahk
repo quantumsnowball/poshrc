@@ -34,12 +34,12 @@ F14 & Home::#^Left
 ;
 
 ; consts
-X_LEFT := 0
-X_CENTER := 50
-X_RIGHT := 100
-Y_TOP := 0
-Y_CENTER := 50
-Y_BOTTOM := 100
+X_LEFT    := 0
+X_CENTER  := 50
+X_RIGHT   := 100
+Y_TOP     := 0
+Y_CENTER  := 50
+Y_BOTTOM  := 100
 W_TINY    := 25.0
 W_SMALL   := 33.33
 W_MEDIUM  := 50.0
