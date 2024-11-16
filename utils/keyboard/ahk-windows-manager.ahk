@@ -51,80 +51,67 @@ H_FULL := 100
 ; presets
 PRESETS := [
     [ ; left tiny
-        [X_LEFT  , Y_TOP   , W_T, H_M   ],
-        [X_LEFT  , Y_TOP   , W_T, H_STD ],
-        [X_LEFT  , Y_CENTER, W_T, H_FULL],
-        [X_LEFT  , Y_BOTTOM, W_T, H_STD ],
-        [X_LEFT  , Y_BOTTOM, W_T, H_M   ], ], 
+        [X_LEFT  , Y_TOP   , W_T, H_M   , " "],
+        [X_LEFT  , Y_TOP   , W_T, H_STD , " "],
+        [X_LEFT  , Y_CENTER, W_T, H_FULL, " "],
+        [X_LEFT  , Y_BOTTOM, W_T, H_STD , " "],
+        [X_LEFT  , Y_BOTTOM, W_T, H_M   , " "], ], 
     [ ; left
-        [X_LEFT  , Y_TOP   , W_S, H_M   ],
-        [X_LEFT  , Y_TOP   , W_S, H_STD ],
-        [X_LEFT  , Y_CENTER, W_S, H_FULL],
-        [X_LEFT  , Y_BOTTOM, W_S, H_STD ],
-        [X_LEFT  , Y_BOTTOM, W_S, H_M   ], ], 
+        [X_LEFT  , Y_TOP   , W_S, H_M   , "q"],
+        [X_LEFT  , Y_TOP   , W_S, H_STD , " "],
+        [X_LEFT  , Y_CENTER, W_S, H_FULL, "a"],
+        [X_LEFT  , Y_BOTTOM, W_S, H_STD , " "],
+        [X_LEFT  , Y_BOTTOM, W_S, H_M   , "z"], ], 
     [ ; left wide
-        [X_LEFT  , Y_TOP   , W_M, H_M   ],
-        [X_LEFT  , Y_TOP   , W_M, H_STD ],
-        [X_LEFT  , Y_CENTER, W_M, H_FULL],
-        [X_LEFT  , Y_BOTTOM, W_M, H_STD ],
-        [X_LEFT  , Y_BOTTOM, W_M, H_M   ], ], 
+        [X_LEFT  , Y_TOP   , W_M, H_M   , " "],
+        [X_LEFT  , Y_TOP   , W_M, H_STD , " "],
+        [X_LEFT  , Y_CENTER, W_M, H_FULL, "r"],
+        [X_LEFT  , Y_BOTTOM, W_M, H_STD , " "],
+        [X_LEFT  , Y_BOTTOM, W_M, H_M   , " "], ], 
     [ ; central max left
-        [X_LEFT  , Y_TOP   , W_L, H_M   ],
-        [X_LEFT  , Y_TOP   , W_L, H_STD ],
-        [X_LEFT  , Y_CENTER, W_L, H_FULL],
-        [X_LEFT  , Y_BOTTOM, W_L, H_STD ],
-        [X_LEFT  , Y_BOTTOM, W_L, H_M   ], ], 
+        [X_LEFT  , Y_TOP   , W_L, H_M   , " "],
+        [X_LEFT  , Y_TOP   , W_L, H_STD , " "],
+        [X_LEFT  , Y_CENTER, W_L, H_FULL, " "],
+        [X_LEFT  , Y_BOTTOM, W_L, H_STD , " "],
+        [X_LEFT  , Y_BOTTOM, W_L, H_M   , " "], ], 
     [ ; central wide
-        [X_CENTER, Y_TOP   , W_M, H_M   ],
-        [X_CENTER, Y_TOP   , W_M, H_STD ],
-        [X_CENTER, Y_CENTER, W_M, H_FULL],
-        [X_CENTER, Y_BOTTOM, W_M, H_STD ],
-        [X_CENTER, Y_BOTTOM, W_M, H_M   ], ], 
+        [X_CENTER, Y_TOP   , W_M, H_M   , " "],
+        [X_CENTER, Y_TOP   , W_M, H_STD , " "],
+        [X_CENTER, Y_CENTER, W_M, H_FULL, "w"],
+        [X_CENTER, Y_BOTTOM, W_M, H_STD , "x"],
+        [X_CENTER, Y_BOTTOM, W_M, H_M   , " "], ], 
     [ ; central
-        [X_CENTER, Y_TOP   , W_S, H_M   ],
-        [X_CENTER, Y_TOP   , W_S, H_STD ],
-        [X_CENTER, Y_CENTER, W_S, H_FULL],
-        [X_CENTER, Y_BOTTOM, W_S, H_STD ],
-        [X_CENTER, Y_BOTTOM, W_S, H_M   ], ], 
+        [X_CENTER, Y_TOP   , W_S, H_M   , " "],
+        [X_CENTER, Y_TOP   , W_S, H_STD , " "],
+        [X_CENTER, Y_CENTER, W_S, H_FULL, "s"],
+        [X_CENTER, Y_BOTTOM, W_S, H_STD , " "],
+        [X_CENTER, Y_BOTTOM, W_S, H_M   , " "], ], 
     [ ; central max right
-        [X_RIGHT , Y_TOP   , W_L, H_M   ],
-        [X_RIGHT , Y_TOP   , W_L, H_STD ],
-        [X_RIGHT , Y_CENTER, W_L, H_FULL],
-        [X_RIGHT , Y_BOTTOM, W_L, H_STD ],
-        [X_RIGHT , Y_BOTTOM, W_L, H_M   ], ], 
+        [X_RIGHT , Y_TOP   , W_L, H_M   , " "],
+        [X_RIGHT , Y_TOP   , W_L, H_STD , " "],
+        [X_RIGHT , Y_CENTER, W_L, H_FULL, "f"],
+        [X_RIGHT , Y_BOTTOM, W_L, H_STD , " "],
+        [X_RIGHT , Y_BOTTOM, W_L, H_M   , " "], ], 
     [ ; right wide
-        [X_RIGHT , Y_TOP   , W_M, H_M   ],
-        [X_RIGHT , Y_TOP   , W_M, H_STD ],
-        [X_RIGHT , Y_CENTER, W_M, H_FULL],
-        [X_RIGHT , Y_BOTTOM, W_M, H_STD ],
-        [X_RIGHT , Y_BOTTOM, W_M, H_M   ], ], 
+        [X_RIGHT , Y_TOP   , W_M, H_M   , " "],
+        [X_RIGHT , Y_TOP   , W_M, H_STD , " "],
+        [X_RIGHT , Y_CENTER, W_M, H_FULL, "v"],
+        [X_RIGHT , Y_BOTTOM, W_M, H_STD , " "],
+        [X_RIGHT , Y_BOTTOM, W_M, H_M   , " "], ], 
     [ ; right
-        [X_RIGHT , Y_TOP   , W_S, H_M   ],
-        [X_RIGHT , Y_TOP   , W_S, H_STD ],
-        [X_RIGHT , Y_CENTER, W_S, H_FULL],
-        [X_RIGHT , Y_BOTTOM, W_S, H_STD ],
-        [X_RIGHT , Y_BOTTOM, W_S, H_M   ], ],
+        [X_RIGHT , Y_TOP   , W_S, H_M   , "e"],
+        [X_RIGHT , Y_TOP   , W_S, H_STD , " "],
+        [X_RIGHT , Y_CENTER, W_S, H_FULL, "d"],
+        [X_RIGHT , Y_BOTTOM, W_S, H_STD , " "],
+        [X_RIGHT , Y_BOTTOM, W_S, H_M   , "c"], ],
     [ ; right tiny
-        [X_RIGHT , Y_TOP   , W_T, H_M   ],
-        [X_RIGHT , Y_TOP   , W_T, H_STD ],
-        [X_RIGHT , Y_CENTER, W_T, H_FULL],
-        [X_RIGHT , Y_BOTTOM, W_T, H_STD ],
-        [X_RIGHT , Y_BOTTOM, W_T, H_M   ], ],
+        [X_RIGHT , Y_TOP   , W_T, H_M   , " "],
+        [X_RIGHT , Y_TOP   , W_T, H_STD , " "],
+        [X_RIGHT , Y_CENTER, W_T, H_FULL, " "],
+        [X_RIGHT , Y_BOTTOM, W_T, H_STD , " "],
+        [X_RIGHT , Y_BOTTOM, W_T, H_M   , " "], ],
 ]
 
-; keys activated
-KEYS := [
-    [" "," "," "," "," "],
-    ["q"," ","a"," ","z"],
-    [" "," ","r"," "," "],
-    [" "," "," "," "," "],
-    [" "," ","w","x"," "],
-    [" "," ","s"," "," "],
-    [" "," ","f"," "," "],
-    [" "," ","v"," "," "],
-    ["e"," ","d"," ","c"],
-    [" "," "," "," "," "],
-]
 
 ; helpers
 Moving(i, j) {
@@ -184,8 +171,9 @@ JumpUp    := () => Jump( 0, -1)
 JumpDown  := () => Jump( 0, +1)
 
 ; assignment
-for i, col in KEYS {
-    for j, key in col {
+for i, col in PRESETS {
+    for j, row in col {
+        key := row[5]
         try {
             if (key != " ")
                 Hotkey Format("F14 & {}", key), Moving(i, j)
