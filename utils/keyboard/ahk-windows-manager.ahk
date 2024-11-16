@@ -44,6 +44,7 @@ W_T := 25.0
 W_S := 33.33
 W_M := 50.0
 W_L := 66.67
+W_G := 75.0
 H_M := 50
 H_STD := 85
 H_FULL := 100
@@ -80,6 +81,12 @@ PRESETS := [
         [X_CENTER, Y_CENTER, W_M, H_FULL, "w" ],
         [X_CENTER, Y_BOTTOM, W_M, H_STD , "x" ],
         [X_CENTER, Y_BOTTOM, W_M, H_M   , ""  ], ], 
+    [ ; central wide max right
+        [X_RIGHT , Y_TOP   , W_G, H_M   , ""  ],
+        [X_RIGHT , Y_TOP   , W_G, H_STD , ""  ],
+        [X_RIGHT , Y_CENTER, W_G, H_FULL, "g" ],
+        [X_RIGHT , Y_BOTTOM, W_G, H_STD , "" ],
+        [X_RIGHT , Y_BOTTOM, W_G, H_M   , ""  ], ], 
     [ ; central
         [X_CENTER, Y_TOP   , W_S, H_M   , ""  ],
         [X_CENTER, Y_TOP   , W_S, H_STD , ""  ],
