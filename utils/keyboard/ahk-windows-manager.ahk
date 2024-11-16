@@ -116,13 +116,13 @@ PRESETS := [
 KEYS := [
     [" "," "," "," "," "],
     ["q"," ","a"," ","z"],
-    [" ","w","s","x"," "],
     [" "," "," "," "," "],
-    [" ","e","d","c"," "],
     [" "," "," "," "," "],
+    [" "," ","w"," ","x"],
+    [" "," ","s"," "," "],
     [" ","r","f","v"," "],
-    [" ","t","g","b"," "],
-    ["y"," ","h"," ","n"],
+    [" "," "," "," "," "],
+    ["e"," ","d"," ","c"],
     [" "," "," "," "," "],
 ]
 N_KEY := KEYS[1].Length
@@ -203,3 +203,7 @@ F14 & Left::JumpLeft
 F14 & Right::JumpRight           
 F14 & Up::JumpUp
 F14 & Down::JumpDown
+F14 & 1::JumpLeft
+F14 & 2::JumpRight           
+F14 & CapsLock::JumpUp
+F14 & LShift::JumpDown
