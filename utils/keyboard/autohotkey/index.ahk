@@ -10,14 +10,14 @@ win_states := Map()
 msg := ""
 
 ; KEY REMAPS
-#Include ahk-remaps.ahk
+#Include remaps.ahk
 
 ; SHORTCUTS
-#Include ahk-text-editing.ahk
-#Include ahk-media-control.ahk
-#Include ahk-windows-manager.ahk
-#Include ahk-utils.ahk
-#Include ahk-mouse.ahk
+#Include text-editing.ahk
+#Include media-control.ahk
+#Include windows-manager/index.ahk
+#Include utils.ahk
+#Include mouse.ahk
 
 ; return
 return
