@@ -15,7 +15,7 @@ msg := ""
 ; SHORTCUTS
 #Include text-editing.ahk
 #Include media-control.ahk
-#Include windows-manager.ahk
+#Include windows-manager/index.ahk
 #Include utils.ahk
 #Include mouse.ahk
 
