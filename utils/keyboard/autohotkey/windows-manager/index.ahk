@@ -4,6 +4,9 @@
 #Include utils.ahk
 
 
+; enabled only when active
+#HotIf active
+
 ; windows operations
 F13 & Backspace::WinKill "A"
 F13 & RShift::WinMinimize "A"
@@ -27,18 +30,7 @@ F13 & Home::#^Left
 F14 & Del::#^Right
 F14 & Home::#^Left
 
-; move, jump, resize
-for i, col in PRESETS {
-    for j, row in col {
-        keys := row[5]
-        try {
-            for _, key in StrSplit(keys)
-                Hotkey Format("F14 & {}", key), Moving(i, j)
-        } catch {
-            return
-        }
-    }
-}
+; jump
 F13 & Left::JumpLeft
 F13 & Right::JumpRight           
 F13 & Up::JumpUp
@@ -51,3 +43,24 @@ F14 & 1::JumpLeft
 F14 & 2::JumpRight           
 F14 & CapsLock::JumpUp
 F14 & LShift::JumpDown
+
+#HotIf
+
+
+; enabled only when active
+HotIf 'active'
+
+; move
+for i, col in PRESETS {
+    for j, row in col {
+        keys := row[5]
+        try {
+            for _, key in StrSplit(keys)
+                Hotkey Format("F14 & {}", key), Moving(i, j)
+        } catch {
+            return
+        }
+    }
+}
+
+HotIf
