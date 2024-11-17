@@ -1,3 +1,20 @@
+; consts
+X_LEFT    := 0
+X_CENTER  := 50
+X_RIGHT   := 100
+Y_TOP     := 0
+Y_CENTER  := 50
+Y_BOTTOM  := 100
+W_TINY    := 25.0
+W_SMALL   := 33.33
+W_MEDIUM  := 50.0
+W_LARGE   := 66.67
+W_GIANT   := 75.0
+H_MEDIUM  := 50
+H_NORMAL  := 85
+H_FULL    := 100
+
+
 ; presets
 PRESETS := [
     [ ; left tiny
