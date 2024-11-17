@@ -1,6 +1,7 @@
 #Include presets.ahk
 #Include move.ahk
 #Include jump.ahk
+#Include utils.ahk
 
 
 ; windows operations
@@ -8,13 +9,7 @@ F13 & Backspace::WinKill "A"
 F13 & RShift::WinMinimize "A"
 F14 & Backspace::WinKill "A"
 F14 & RShift::WinMinimize "A"
-F14 & Enter::{
-    state := WinGetMinMax("A")
-    if (state = 1) 
-        WinRestore "A"
-    if (state = 0) 
-        WinMaximize "A"
-}
+F14 & Enter::ToggleMaximize
 
 ; task switch
 F13 & \::AltTab
