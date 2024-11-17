@@ -16,7 +16,6 @@ F14 & Enter::{
         WinMaximize "A"
 }
 
-
 ; task switch
 F13 & \::AltTab
 F13 & Tab::ShiftAltTab
@@ -33,14 +32,7 @@ F13 & Home::#^Left
 F14 & Del::#^Right
 F14 & Home::#^Left
 
-
-;
-; move and resize
-;
-
-
-
-; assignment
+; move, jump, resize
 for i, col in PRESETS {
     for j, row in col {
         keys := row[5]
@@ -52,7 +44,6 @@ for i, col in PRESETS {
         }
     }
 }
-
 F13 & Left::JumpLeft
 F13 & Right::JumpRight           
 F13 & Up::JumpUp
