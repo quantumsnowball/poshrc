@@ -1,3 +1,8 @@
+#Include presets.ahk
+#Include move.ahk
+#Include jump.ahk
+
+
 ; windows operations
 F13 & Backspace::WinKill "A"
 F13 & RShift::WinMinimize "A"
@@ -33,10 +38,6 @@ F14 & Home::#^Left
 ; move and resize
 ;
 
-; presets
-#Include presets.ahk
-#Include move.ahk
-#Include jump.ahk
 
 
 ; assignment
