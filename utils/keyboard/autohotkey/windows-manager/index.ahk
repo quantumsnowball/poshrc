@@ -31,6 +31,8 @@ F13 & Del::#^Right
 F13 & Home::#^Left
 F14 & Del::#^Right
 F14 & Home::#^Left
+XButton1 & WheelUp::Send "#^{Right}"
+XButton1 & WheelDown::Send "#^{Left}"
 
 ; jump
 F13 & Left::JumpLeft
