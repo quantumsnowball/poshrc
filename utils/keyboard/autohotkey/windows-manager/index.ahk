@@ -30,8 +30,8 @@ F14 & PgUp::ShiftAltTab
 F14 & WheelUp::AltTab
 F14 & WheelDown::ShiftAltTab
 XButton1 & Tab::AltTab
-XButton2 & WheelUp::AltTab
-XButton2 & WheelDown::ShiftAltTab
+XButton2 & WheelDown::AltTab
+XButton2 & WheelUp::!Esc
 
 ; workspace switch
 F13 & Del::#^Right
