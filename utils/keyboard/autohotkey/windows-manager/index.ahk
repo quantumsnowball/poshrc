@@ -69,5 +69,5 @@ for i, col in PRESETS {
         }
     }
 }
-
+Hotkey "XButton2 & LButton", Moving(8, 3)
 HotIf
