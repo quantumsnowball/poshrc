@@ -2,8 +2,17 @@
 Moving(i, j) {
     ; specific [title, class] to blacklist
     BLACKLIST := [
-       ; desktop icons
-       ["", "WorkerW"],
+        ; desktop
+        ["", "WorkerW"],
+        ; system tray
+        ["", "Shell_TrayWnd"],
+        ["System tray overflow window.", "TopLevelWindowForOverflowXamlIsland"],
+        ["Notification Center", "Windows.UI.Core.CoreWindow"],
+        ["Quick settings", "Windows.UI.Core.CoreWindow"],
+        ; start menu
+        ["Search", "Windows.UI.Core.CoreWindow"],
+        ["Task View", "XamlExplorerHostIslandWindow"],
+        ["", "WindowsDashboard"],
     ]
 
     Move(_name) {
