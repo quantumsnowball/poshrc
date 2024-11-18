@@ -10,6 +10,9 @@ win_states := Map()
 win_focus_states := Map()
 msg := ""
 
+; logging
+#Include logging.ahk
+
 ; KEY REMAPS
 #Include remaps.ahk
 

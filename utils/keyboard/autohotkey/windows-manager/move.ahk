@@ -12,6 +12,7 @@ Moving(i, j) {
         class := WinGetClass("A")
         for _, b in BLACKLIST {
             if (title = b[1] && class = b[2]) {
+                Log("Move (blocked): title='" title "', class='" class "'")
                 return
             }
         }
@@ -41,9 +42,7 @@ Moving(i, j) {
         pid := WinGetID("A")
         win_states[pid] := {i: i, j: j} 
         ; debug
-        ; msg := Format("{1},{2}", win_states[pid].i ,win_states[pid].j)
-        ; msg := Format("{1}, {2}, {3}, {4}", Left, Top, Right, Bottom)
-        ; msg := Format("Move(x={1}, y={2}, w={3}, h={4})", x, y, w, h)
+        Log("Move          : title='" title "', class='" class "'")
     }
 
     return Move
