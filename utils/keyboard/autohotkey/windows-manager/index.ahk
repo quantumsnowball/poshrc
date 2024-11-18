@@ -14,6 +14,7 @@ F14 & Backspace::WinKill "A"
 F14 & RShift::WinMinimize "A"
 F14 & Enter::ToggleMaximize
 XButton1 & Esc::WinKill "A"
+XButton1 & Space::WinMinimize "A"
 XButton2 & RButton::WinMinimize "A"
 XButton2 & MButton::WinKill "A"
 
