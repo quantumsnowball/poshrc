@@ -12,7 +12,7 @@ Moving(i, j) {
         class := WinGetClass("A")
         for _, b in BLACKLIST {
             if (title = b[1] && class = b[2]) {
-                Log("Move (blocked): title='" title "', class='" class "'")
+                Log(Format('Move (blocked): ["{1}", "{2}"]', title, class))
                 return
             }
         }
@@ -42,7 +42,7 @@ Moving(i, j) {
         pid := WinGetID("A")
         win_states[pid] := {i: i, j: j} 
         ; debug
-        Log("Move          : title='" title "', class='" class "'")
+        Log(Format('Move          : ["{1}", "{2}"]', title, class))
     }
 
     return Move
