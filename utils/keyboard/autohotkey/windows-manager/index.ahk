@@ -16,8 +16,7 @@ F14 & RShift::WinMinimize "A"
 F14 & Enter::ToggleMaximize
 XButton1 & Esc::WinKill "A"
 XButton1 & Space::WinMinimize "A"
-XButton2 & RButton::WinMinimize "A"
-XButton2 & MButton::WinKill "A"
+XButton2 & MButton::WinMinimize "A"
 
 ; task switch
 F13 & \::AltTab
@@ -39,8 +38,8 @@ F13 & Del::#^Right
 F13 & Home::#^Left
 F14 & Del::#^Right
 F14 & Home::#^Left
-XButton1 & WheelUp::Send "#^{Right}"
-XButton1 & WheelDown::Send "#^{Left}"
+XButton2 & RButton::Send "#^{Right}"
+XButton2 & LButton::Send "#^{Left}"
 
 ; jump
 F13 & Left::JumpLeft
@@ -57,7 +56,9 @@ F14 & CapsLock::JumpUp
 F14 & LShift::JumpDown
 XButton1 & LButton::JumpLeft
 XButton1 & RButton::JumpRight
-XButton1 & MButton::JumpDown
+; XButton1 & MButton::JumpDown
+XButton1 & WheelDown::JumpUp
+XButton1 & WheelUp::JumpDown
 XButton1 & 1::JumpLeft
 XButton1 & 2::JumpRight           
 XButton1 & CapsLock::JumpUp
@@ -83,5 +84,5 @@ for i, col in PRESETS {
         }
     }
 }
-Hotkey "XButton2 & LButton", JumpFocus
+Hotkey "XButton1 & MButton", JumpFocus
 HotIf
