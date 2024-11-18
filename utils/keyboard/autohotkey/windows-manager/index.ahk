@@ -66,8 +66,10 @@ for i, col in PRESETS {
     for j, row in col {
         keys := row[5]
         try {
-            for _, key in StrSplit(keys)
+            for _, key in StrSplit(keys) {
                 Hotkey Format("F14 & {}", key), Moving(i, j)
+                Hotkey Format("XButton1 & {}", key), Moving(i, j)
+            }
         } catch {
             return
         }
