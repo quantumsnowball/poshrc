@@ -23,6 +23,8 @@ F14 & \::AltTab
 F14 & Tab::ShiftAltTab
 F14 & PgDn::AltTab
 F14 & PgUp::ShiftAltTab
+F14 & WheelUp::AltTab
+F14 & WheelDown::ShiftAltTab
 
 ; workspace switch
 F13 & Del::#^Right
