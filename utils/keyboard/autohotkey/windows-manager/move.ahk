@@ -1,6 +1,20 @@
 ; helpers
 Moving(i, j) {
+    ; specific [title, class] to blacklist
+    BLACKLIST := [
+       ; desktop icons
+       ["", "WorkerW"],
+    ]
+
     Move(_name) {
+        ; blacklist
+        title := WinGetTitle("A")
+        class := WinGetClass("A")
+        for _, b in BLACKLIST {
+            if (title = b[1] && class = b[2]) {
+                return
+            }
+        }
         ; debug
         global msg
         ; get presets

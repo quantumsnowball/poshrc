@@ -85,3 +85,8 @@ PRESETS := [
         [X_RIGHT , Y_BOTTOM, W_TINY   , H_MEDIUM , ""  ], ],
 ]
 
+PRESETS_FOCUS := [
+    [8, 3],
+    [5, 3],
+    [5, 4],
+]
