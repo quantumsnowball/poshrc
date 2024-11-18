@@ -19,6 +19,7 @@ XButton1 & Space::WinMinimize "A"
 XButton2 & MButton::WinMinimize "A"
 
 ; task switch
+; - caution: AltTab cannot be disabled by #HotIf
 F13 & \::AltTab
 F13 & Tab::ShiftAltTab
 F13 & PgDn::AltTab
