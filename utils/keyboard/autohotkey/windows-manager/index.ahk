@@ -30,7 +30,7 @@ F14 & PgUp::ShiftAltTab
 F14 & WheelUp::AltTab
 F14 & WheelDown::ShiftAltTab
 XButton1 & Tab::AltTab
-XButton1 & WheelDown::ShiftAltTab
+XButton1 & WheelDown::AltTab
 XButton1 & WheelUp::Send "!{Esc}"
 
 ; workspace switch
