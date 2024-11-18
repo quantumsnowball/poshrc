@@ -49,6 +49,7 @@ F14 & CapsLock::JumpUp
 F14 & LShift::JumpDown
 XButton1 & LButton::JumpLeft
 XButton1 & RButton::JumpRight
+XButton1 & MButton::JumpDown
 
 #HotIf
 
