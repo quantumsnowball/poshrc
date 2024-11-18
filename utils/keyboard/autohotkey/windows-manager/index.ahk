@@ -13,6 +13,7 @@ F13 & RShift::WinMinimize "A"
 F14 & Backspace::WinKill "A"
 F14 & RShift::WinMinimize "A"
 F14 & Enter::ToggleMaximize
+XButton2 & RButton::WinMinimize "A"
 
 ; task switch
 F13 & \::AltTab
