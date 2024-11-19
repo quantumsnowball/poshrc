@@ -6,3 +6,10 @@ ToggleMaximize() {
         WinMaximize "A"
 }
 
+HoldToWinKill(key, opts) {
+    Action(_name) {
+        if (!KeyWait(key, opts))
+            WinKill _name
+    }
+    return Action
+}

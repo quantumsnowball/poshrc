@@ -8,13 +8,13 @@
 #HotIf active
 
 ; windows operations
-F13 & Backspace::WinKill "A"
+F13 & Backspace::HoldToWinKill("Backspace", "T1.2")("A")
 F13 & RShift::WinMinimize "A"
-F14 & Backspace::WinKill "A"
+F14 & Backspace::HoldToWinKill("Backspace", "T1.2")("A")
 F14 & Space::WinMinimize "A"
 F14 & RShift::WinMinimize "A"
 F14 & Enter::ToggleMaximize
-XButton1 & Esc::WinKill "A"
+XButton1 & Esc::HoldToWinKill("Esc", "T1.2")("A")
 XButton1 & Space::WinMinimize "A"
 
 ; task switch
