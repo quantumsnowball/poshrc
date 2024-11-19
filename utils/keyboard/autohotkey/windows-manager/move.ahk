@@ -13,6 +13,7 @@ Moving(i, j) {
         ["Search", "Windows.UI.Core.CoreWindow"],
         ["Task View", "XamlExplorerHostIslandWindow"],
         ["", "WindowsDashboard"],
+        ["", "XamlExplorerHostIslandWindow_WASDK"],
     ]
 
     Move(_name) {
