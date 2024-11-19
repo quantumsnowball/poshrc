@@ -64,6 +64,10 @@ XButton1 & 1::JumpLeft
 XButton1 & 2::JumpRight           
 XButton1 & CapsLock::JumpUp
 XButton1 & LShift::JumpDown
+XButton2 & 1::JumpLeft
+XButton2 & 2::JumpRight           
+XButton2 & CapsLock::JumpUp
+XButton2 & LShift::JumpDown
 
 #HotIf
 
@@ -78,6 +82,7 @@ for i, col in PRESETS {
         try {
             for _, key in StrSplit(keys) {
                 Hotkey Format("F14 & {}", key), Moving(i, j)
+                Hotkey Format("XButton1 & {}", key), Moving(i, j)
                 Hotkey Format("XButton2 & {}", key), Moving(i, j)
             }
         } catch {
