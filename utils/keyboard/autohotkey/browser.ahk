@@ -1,5 +1,5 @@
 ; chrome browser
-#hotif active and winactive("ahk_exe chrome.exe")
+#HotIf active and WinActive("ahk_exe chrome.exe")
 
 F13 & WheelUp::Send "^{Tab}"
 F13 & WheelDown::Send "^+{Tab}"
@@ -7,7 +7,18 @@ F13 & XButton1::Send "^w"
 
 ~MButton & WheelUp::Send "^{Tab}"
 ~MButton & WheelDown::Send "^+{Tab}"
-~MButton & XButton1::Send "^w"
+~MButton & RButton:: {
+    if (KeyWait("RButton", "T0.8"))
+        Send "{Browser_Back}"
+    else
+        Send "^w"
+}
+~MButton & LButton:: {
+    if (KeyWait("LButton", "T0.4"))
+        Send "^{F5}"
+    else
+        Send "^+t"
+}
 
 #HotIf
 
