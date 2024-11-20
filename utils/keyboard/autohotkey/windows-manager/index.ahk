@@ -38,7 +38,9 @@ F13 & Del::#^Right
 F13 & Home::#^Left
 F14 & Del::#^Right
 F14 & Home::#^Left
-; XButton1 & MButton::Send "#{Tab}"
+XButton1 & RButton:: Send "#^{Right}"
+XButton1 & LButton:: Send "#^{Left}"
+XButton1 & MButton:: Send "#{Tab}"
 
 ; jump
 F13 & Left::JumpLeft
@@ -65,24 +67,6 @@ XButton2 & CapsLock::JumpUp
 XButton2 & LShift::JumpDown
 
 ; gesture
-XButton1 & RButton:: {
-    if (KeyWait("RButton", "T0.3"))
-        Send "#^{Right}"
-    else
-        Send "{Browser_Back}"
-}
-XButton1 & LButton:: {
-    if (KeyWait("LButton", "T0.3"))
-        Send "#^{Left}"
-    else
-        Send "^{LButton}"
-}
-XButton1 & MButton:: {
-    if (KeyWait("MButton", "T0.3"))
-        Send "#{Tab}"
-    else
-        Send "^{F5}"
-}
 XButton2 & LButton:: {
     if (KeyWait("LButton", "T0.5"))
         JumpLeft
