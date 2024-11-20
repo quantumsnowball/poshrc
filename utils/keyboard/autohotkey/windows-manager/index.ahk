@@ -38,9 +38,9 @@ F13 & Del::#^Right
 F13 & Home::#^Left
 F14 & Del::#^Right
 F14 & Home::#^Left
-XButton1 & RButton::Send "#^{Right}"
-XButton1 & LButton::Send "#^{Left}"
-XButton1 & MButton::Send "#{Tab}"
+XButton1 & RButton:: Send "#^{Right}"
+XButton1 & LButton:: Send "#^{Left}"
+XButton1 & MButton:: Send "#{Tab}"
 
 ; jump
 F13 & Left::JumpLeft
