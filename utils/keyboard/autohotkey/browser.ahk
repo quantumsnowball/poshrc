@@ -1,5 +1,5 @@
 ; chrome browser
-#HotIf WinActive("ahk_exe chrome.exe")
+#hotif active and winactive("ahk_exe chrome.exe")
 
 F13 & WheelUp::Send "^{Tab}"
 F13 & WheelDown::Send "^+{Tab}"
