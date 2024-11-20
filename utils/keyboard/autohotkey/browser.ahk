@@ -11,7 +11,7 @@ F13 & RButton:: {
 }
 F13 & LButton:: {
     if (KeyWait("LButton", "T0.4"))
-        Send "^{F5}"
+        Send "{Browser_Forward}"
     else
         Send "^+t"
 }
@@ -25,11 +25,14 @@ F13 & LButton:: {
         Send "^w"
 }
 ~MButton & LButton:: {
-    if (KeyWait("LButton", "T0.4"))
-        Send "^{F5}"
+    if (KeyWait("LButton", "T0.8"))
+        Send "{Browser_Forward}"
     else
         Send "^+t"
 }
+
+XButton1::Send "^{F5}"
+XButton2::Send "^h"
 
 #HotIf
 
