@@ -38,7 +38,7 @@ F13 & Del::#^Right
 F13 & Home::#^Left
 F14 & Del::#^Right
 F14 & Home::#^Left
-XButton1 & MButton::Send "#{Tab}"
+; XButton1 & MButton::Send "#{Tab}"
 
 ; jump
 F13 & Left::JumpLeft
@@ -75,7 +75,13 @@ XButton1 & LButton:: {
     if (KeyWait("LButton", "T0.3"))
         Send "#^{Left}"
     else
-        Send "{Browser_Refresh}"
+        Send "^{LButton}"
+}
+XButton1 & MButton:: {
+    if (KeyWait("MButton", "T0.3"))
+        Send "#{Tab}"
+    else
+        Send "^{F5}"
 }
 XButton2 & LButton:: {
     if (KeyWait("LButton", "T0.5"))
