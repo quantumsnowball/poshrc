@@ -3,7 +3,11 @@
 
 F13 & WheelUp::Send "^{Tab}"
 F13 & WheelDown::Send "^+{Tab}"
-F13 & MButton::Send "^w"
+F13 & XButton1::Send "^w"
+
+~MButton & WheelUp::Send "^{Tab}"
+~MButton & WheelDown::Send "^+{Tab}"
+~MButton & XButton1::Send "^w"
 
 #HotIf
 
