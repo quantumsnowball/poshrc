@@ -10,7 +10,7 @@ F13 & WheelDown::
 ; 
 F13 & LButton::
 ~MButton & LButton:: {
-    if (KeyWait("LButton", "T0.8"))
+    if (KeyWait("LButton", "T0.5"))
         ; left click to go back
         Send "{Browser_Back}"
     else
@@ -20,7 +20,7 @@ F13 & LButton::
 ;
 F13 & RButton::
 ~MButton & RButton:: {
-    if (KeyWait("RButton", "T0.8"))
+    if (KeyWait("RButton", "T0.5"))
         ; right click to go forward
         Send "{Browser_Forward}"
     else
