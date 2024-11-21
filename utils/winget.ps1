@@ -4,3 +4,4 @@ function wgls () { winget list | more }
 function wgrm () { winget uninstall $args }
 function wgu () { winget upgrade $args }
 function wgup () { winget upgrade $args }
+function wgupall () { winget upgrade --all }
