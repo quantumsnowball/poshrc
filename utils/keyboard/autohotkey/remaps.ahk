@@ -24,12 +24,18 @@ F14 & F13::
 }
 
 ; Dynamic remaps
-; - put potential conflicting remaps here
+; - manually activated
 #HotIf active
 Esc::`
 LAlt::LCtrl
-LCtrl::LWin
 LWin::LAlt
+#HotIf
+; - auto deactivated
+;   bug: conflicting with Task Manager top search bar
+;        can't remap LCtrl::<any key> at all
+GroupAdd "SystemSpecial", "ahk_class TaskManagerWindow"
+#HotIf active and !WinActive("ahk_group SystemSpecial")
+LCtrl::LWin 
 #HotIf
 
 ; Static remaps
