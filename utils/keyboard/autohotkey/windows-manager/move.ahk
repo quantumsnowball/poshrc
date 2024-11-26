@@ -1,17 +1,18 @@
+; get working area, account for taskbar
+MonitorGetWorkArea(1, &MON_LEFT, &MON_TOP, &MON_RIGHT, &MON_BOTTOM)
+
 ; helpers
 CalcPresetCoordinate(x_pct, y_pct, w_pct, h_pct) {
-    ; get working area, account for taskbar
-    MonitorGetWorkArea(1, &left, &top, &right, &bottom)
     ; widht and x
-    w_area := right - left
+    w_area := MON_RIGHT - MON_LEFT
     w := w_area * w_pct/100
     x_max := w_area - w
-    x := left + x_max * x_pct/100
+    x := MON_LEFT + x_max * x_pct/100
     ; height and y
-    h_area := bottom - top
+    h_area := MON_BOTTOM - MON_TOP
     h := h_area * h_pct/100
     y_max := h_area - h
-    y := top + y_max * y_pct/100
+    y := MON_TOP + y_max * y_pct/100
     ; return
     return { X:x, Y:y, W:w, H:h, X_:x+w, Y_:y+h }
 }
