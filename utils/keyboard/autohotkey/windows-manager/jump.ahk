@@ -3,14 +3,11 @@ Jump(m, n) {
     len := PRESETS[1].Length
     pid := WinGetID("A")
     try {
+        ; find the last use preset
         p := win_states[pid]
     } catch {
-        ; default is central full
-        ; Moving(7, 3)("-")
-        
-        ; find the fittest preset
+        ; find the closest preset
         p := FindBestFitPreset()
-        Log('i:' p.i ', j:' p.j)
     }
     i := p.i + m
     j := p.j + n

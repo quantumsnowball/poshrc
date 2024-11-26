@@ -84,13 +84,11 @@ FindBestFitPreset() {
             dist21 := Sqrt((wX_ - p.X_)**2 + (wY  - p.Y )**2)
             dist12 := Sqrt((wX  - p.X )**2 + (wY_ - p.Y_)**2)
             dist22 := Sqrt((wX_ - p.X_)**2 + (wY_ - p.Y_)**2)
-            ; Log(dist11 ',' dist21 ',' dist12 ',' dist22)
+            ; update the rolling dist and best preset found
             dist := (dist11 + dist21 + dist12 + dist22) / 4
-            Log('dist:' dist)
             if (dist < rolling_min_dist) {
                 best_preset := { i: i, j: j }
                 rolling_min_dist := dist
-                Log('dist=' rolling_min_dist ', i,j=' i ',' j)
             }
         }
     }
