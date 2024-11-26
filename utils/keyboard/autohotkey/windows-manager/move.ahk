@@ -58,3 +58,26 @@ Moving(i, j) {
     return Move
 }
 
+
+FindBestFitPreset() {
+    ; get A window pos
+    WinGetPos &wX, &wY, &wW, &wH, "A"
+    wX_ := wX + wW
+    wY_ := wY + wH
+    ; loop through presets to find min sum of abs corner distances
+    pct_ovlp := 0
+    for i, col in PRESETS {
+        for j, row in col {
+            ; calc the distance between corresponding four corners
+            pX := row[1]
+            pY := row[2]
+            pW := row[3]
+            pH := row[4]
+            preset_area := pW * pH
+            pX_ := pX + pW
+            pY_ := pY + pH
+            x_ovlp = 
+            ovlp_area := 
+        }
+    }
+}
