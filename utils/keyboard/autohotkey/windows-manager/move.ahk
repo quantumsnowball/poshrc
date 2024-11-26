@@ -1,5 +1,5 @@
 ; helpers
-CalcPresetCoor(x_pct, y_pct, w_pct, h_pct) {
+CalcPresetCoordinate(x_pct, y_pct, w_pct, h_pct) {
     ; get working area, account for taskbar
     MonitorGetWorkArea(1, &left, &top, &right, &bottom)
     ; widht and x
@@ -15,6 +15,7 @@ CalcPresetCoor(x_pct, y_pct, w_pct, h_pct) {
     ; return
     return { X:x, Y:y, W:w, H:h, X_:x+w, Y_:y+h }
 }
+
 
 Moving(i, j) {
     ; specific [title, class] to blacklist
@@ -50,20 +51,9 @@ Moving(i, j) {
         y_pct := PRESETS[i][j][2]
         w_pct := PRESETS[i][j][3]
         h_pct := PRESETS[i][j][4]
-        ; get working area, account for taskbar
-        MonitorGetWorkArea(1, &left, &top, &right, &bottom)
-        ; widht and x
-        w_area := right - left
-        w := w_area * w_pct/100
-        x_max := w_area - w
-        x := left + x_max * x_pct/100
-        ; height and y
-        h_area := bottom - top
-        h := h_area * h_pct/100
-        y_max := h_area - h
-        y := top + y_max * y_pct/100
+        p := CalcPresetCoordinate(x_pct, y_pct, w_pct, h_pct)
         ; move active window
-        WinMove x, y, w, h, "A"
+        WinMove p.X, p.Y, p.W, p.H, "A"
         ; remember window state
         global win_states
         pid := WinGetID("A")
@@ -89,7 +79,7 @@ FindBestFitPreset() {
     for i, col in PRESETS {
         for j, row in col {
             ; calc the distance between corresponding four corners
-            p := CalcPresetCoor(row[1], row[2], row[3], row[4])
+            p := CalcPresetCoordinate(row[1], row[2], row[3], row[4])
             dist11 := Sqrt((wX  - p.X )**2 + (wY  - p.Y )**2)
             dist21 := Sqrt((wX_ - p.X_)**2 + (wY  - p.Y )**2)
             dist12 := Sqrt((wX  - p.X )**2 + (wY_ - p.Y_)**2)
