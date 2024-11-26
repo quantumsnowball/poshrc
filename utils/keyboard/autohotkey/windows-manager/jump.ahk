@@ -4,15 +4,19 @@ Jump(m, n) {
     pid := WinGetID("A")
     try {
         p := win_states[pid]
-        i := p.i + m
-        j := p.j + n
-        if (1<=i && i<=PRESETS.Length) {
-            j := j<1 ? len : j>len ? 1 : j
-            Moving(i, j)("-")
-        }
     } catch {
         ; default is central full
-        Moving(7, 3)("-")
+        ; Moving(7, 3)("-")
+        
+        ; find the fittest preset
+        p := FindBestFitPreset()
+        Log('i:' p.i ', j:' p.j)
+    }
+    i := p.i + m
+    j := p.j + n
+    if (1<=i && i<=PRESETS.Length) {
+        j := j<1 ? len : j>len ? 1 : j
+        Moving(i, j)("-")
     }
 }
 
