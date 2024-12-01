@@ -10,7 +10,10 @@ F13 & 5::
 ; - ensure both keys are released before locking, otherwise blocking
 F13 & Space:: 
 {
+    ; disable user input (including Space) to send to any PC app, e.g. YouTube
+    BlockInput true
     KeyWait "Space"
     KeyWait "F13"
+    BlockInput false
     DllCall("LockWorkStation")
 }
