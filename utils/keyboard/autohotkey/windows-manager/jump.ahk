@@ -3,16 +3,17 @@ Jump(m, n) {
     len := PRESETS[1].Length
     pid := WinGetID("A")
     try {
+        ; find the last use preset
         p := win_states[pid]
-        i := p.i + m
-        j := p.j + n
-        if (1<=i && i<=PRESETS.Length) {
-            j := j<1 ? len : j>len ? 1 : j
-            Moving(i, j)("-")
-        }
     } catch {
-        ; default is central full
-        Moving(7, 3)("-")
+        ; find the closest preset
+        p := FindBestFitPreset()
+    }
+    i := p.i + m
+    j := p.j + n
+    if (1<=i && i<=PRESETS.Length) {
+        j := j<1 ? len : j>len ? 1 : j
+        Moving(i, j)("-")
     }
 }
 
