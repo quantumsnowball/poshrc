@@ -30,16 +30,12 @@ F14 & PgUp::ShiftAltTab
 F14 & WheelUp::AltTab
 F14 & WheelDown::ShiftAltTab
 XButton1 & Tab::Send "!{Esc}"
-; XButton1 & WheelDown::Send "!+{Esc}"
-; XButton1 & WheelUp::Send "!{Esc}"
 
 ; workspace switch
 F13 & Del::#^Right
 F13 & Home::#^Left
 F14 & Del::#^Right
 F14 & Home::#^Left
-; XButton1 & RButton:: Send "#^{Right}"
-; XButton1 & LButton:: Send "#^{Left}"
 XButton1 & MButton:: Send "#{Tab}"
 
 ; jump
