@@ -30,8 +30,8 @@ F14 & PgUp::ShiftAltTab
 F14 & WheelUp::AltTab
 F14 & WheelDown::ShiftAltTab
 XButton1 & Tab::Send "!{Esc}"
-XButton1 & WheelDown::Send "!+{Esc}"
-XButton1 & WheelUp::Send "!{Esc}"
+; XButton1 & WheelDown::Send "!+{Esc}"
+; XButton1 & WheelUp::Send "!{Esc}"
 
 ; workspace switch
 F13 & Del::#^Right
