@@ -35,7 +35,11 @@ XButton1:: {
         Send "^{F5}"
 }
 ; show history tab
-XButton2::Send "^h"
+XButton2:: {
+    ; fast double click to show browser history
+    if (KeyWait("XButton2", "D T0.3"))
+        Send "^h"
+}
 
 #HotIf
 
