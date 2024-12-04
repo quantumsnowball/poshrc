@@ -66,6 +66,8 @@ Moving(i, j) {
     return Move
 }
 
+MoveToLeftThird  := () => Moving( 2, 3)("-")
+MoveToRightThird := () => Moving(10, 3)("-")
 
 FindBestFitPreset() {
     ; get A window pos

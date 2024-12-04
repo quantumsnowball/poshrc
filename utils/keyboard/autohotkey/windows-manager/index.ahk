@@ -79,13 +79,13 @@ XButton2 & LButton:: {
     if (KeyWait("LButton", "T0.5"))
         JumpLeft
     else
-        ToggleMaximize
+        MoveToLeftThird
 }
 XButton2 & RButton:: {
     if (KeyWait("RButton", "T0.5"))
         JumpRight
     else
-        WinMinimize "A"
+        MoveToRightThird
 }
 XButton2 & MButton:: {
     if (KeyWait("MButton", "T1.2"))
