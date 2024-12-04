@@ -28,14 +28,13 @@ JumpFocus(_name) {
     len := PRESETS_FOCUS.Length
     pid := WinGetID("A")
     try {
-        p := win_focus_states[pid] + 1
-        i := PRESETS_FOCUS[p][1]
-        j := PRESETS_FOCUS[p][2]
-        Moving(i, j)("-")
-        win_focus_states[pid] := p
+        p := win_focus_states[pid]
     } catch {
-        ; default is central full
-        Moving(8, 3)("-")
-        win_focus_states[pid] := 1
+        p := 1
     }
+    p := p>=len ? 1 : p+1
+    i := PRESETS_FOCUS[p][1]
+    j := PRESETS_FOCUS[p][2]
+    Moving(i, j)("-")
+    win_focus_states[pid] := p
 }
