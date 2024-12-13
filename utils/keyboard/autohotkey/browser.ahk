@@ -2,11 +2,11 @@
 #HotIf active and WinActive("ahk_exe chrome.exe")
 
 ; next tab
-F13 & WheelUp::
-~MButton & WheelUp::Send "^{Tab}"
-; previous tab
 F13 & WheelDown::
-~MButton & WheelDown::Send "^+{Tab}"
+~MButton & WheelDown::Send "^{Tab}"
+; previous tab
+F13 & WheelUp::
+~MButton & WheelUp::Send "^+{Tab}"
 ; 
 F13 & LButton::
 ~MButton & LButton:: {
