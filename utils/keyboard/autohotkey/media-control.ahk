@@ -15,7 +15,7 @@ F14 & [::Media_Prev
 
 #HotIf active
 
-XButton1 & WheelDown::Send "{Volume_Up}"
-XButton1 & WheelUp::Send "{Volume_Down}"
+XButton1 & WheelUp::Send "{Volume_Up}"
+XButton1 & WheelDown::Send "{Volume_Down}"
 
 #HotIf

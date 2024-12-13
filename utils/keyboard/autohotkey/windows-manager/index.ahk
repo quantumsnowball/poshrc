@@ -27,8 +27,8 @@ F14 & \::AltTab
 F14 & Tab::ShiftAltTab
 F14 & PgDn::AltTab
 F14 & PgUp::ShiftAltTab
-F14 & WheelUp::AltTab
-F14 & WheelDown::ShiftAltTab
+F14 & WheelDown::AltTab
+F14 & WheelUp::ShiftAltTab
 XButton1 & Tab::Send "!{Esc}"
 
 ; workspace switch
@@ -51,8 +51,8 @@ F14 & 1::JumpLeft
 F14 & 2::JumpRight           
 F14 & CapsLock::JumpUp
 F14 & LShift::JumpDown
-XButton2 & WheelDown::JumpUp
-XButton2 & WheelUp::JumpDown
+XButton2 & WheelUp::JumpUp
+XButton2 & WheelDown::JumpDown
 XButton1 & 1::JumpLeft
 XButton1 & 2::JumpRight           
 XButton1 & CapsLock::JumpUp
