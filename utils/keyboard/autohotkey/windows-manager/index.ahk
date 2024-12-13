@@ -27,8 +27,8 @@ F14 & \::AltTab
 F14 & Tab::ShiftAltTab
 F14 & PgDn::AltTab
 F14 & PgUp::ShiftAltTab
-F14 & WheelUp::AltTab
-F14 & WheelDown::ShiftAltTab
+F14 & WheelDown::AltTab
+F14 & WheelUp::ShiftAltTab
 XButton1 & Tab::Send "!{Esc}"
 
 ; workspace switch
