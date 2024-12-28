@@ -28,7 +28,7 @@ function CompareReplace {
     # Compare the files
     if (Compare-Object (Get-Content $ets_file) (Get-Content $ats_file)) {
         # title
-        Write-Host "`nComparing ``$text`` files:"
+        Write-Host "Comparing ``$text`` files:"
 
         # Prompt user for action
         $choice = Read-Host (
@@ -36,12 +36,20 @@ function CompareReplace {
         "(1) ETS file ($((Get-Item $ets_file).LastWriteTime))`n" + 
         "(2) ATS file ($((Get-Item $ats_file).LastWriteTime))`n")
 
+        # Backup filenames with timestamp
+        $timestamp = (Get-Date).ToString("yyyyMMdd-HHmmss")
+        $ets_backup = "$ets_file.$timestamp.bak"
+        $ats_backup = "$ats_file.$timestamp.bak"
+
+        # Replace the files
         if ($choice -eq '1') {
-    #         # Copy-Item $ats_file -Destination $ets_file -Force
-            Write-Host "ATS file has been replaced with ETS file."
-        } elseif ($choice -eq '2') {
+            Copy-Item $ats_file -Destination $ats_backup -Force
     #         # Copy-Item $ets_file -Destination $ats_file -Force
             Write-Host "ETS file has been replaced with ATS file."
+        } elseif ($choice -eq '2') {
+            Copy-Item $ets_file -Destination $ets_backup -Force
+    #         # Copy-Item $ats_file -Destination $ets_file -Force
+            Write-Host "ATS file has been replaced with ETS file."
         } else {
             Write-Host "Invalid choice. No files were replaced."
         }
