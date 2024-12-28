@@ -35,7 +35,11 @@ function CompareReplace {
         Write-Host "`nComparing ``$text`` files:"
 
         # Prompt user for action
-        $choice = Read-Host "Which file to use? `n(1) ETS file ($ets_mod_time)`n(2) ATS file ($ats_mod_time)`n"
+        $choice = Read-Host (
+        "Which file to use? `n" +
+        "(1) ETS file ($ets_mod_time)`n" + 
+        "(2) ATS file ($ats_mod_time)`n")
+
         if ($choice -eq '1') {
     #         # Copy-Item $ats_file -Destination $ets_file -Force
             Write-Host "ATS file has been replaced with ETS file."
