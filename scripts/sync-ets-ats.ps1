@@ -44,11 +44,11 @@ function CompareReplace {
         # Replace the files
         if ($choice -eq '1') {
             Copy-Item $ats_file -Destination $ats_backup -Force
-    #         # Copy-Item $ets_file -Destination $ats_file -Force
+            Copy-Item $ets_file -Destination $ats_file -Force
             Write-Host "ETS file has been replaced with ATS file."
         } elseif ($choice -eq '2') {
             Copy-Item $ets_file -Destination $ets_backup -Force
-    #         # Copy-Item $ats_file -Destination $ets_file -Force
+            Copy-Item $ats_file -Destination $ets_file -Force
             Write-Host "ATS file has been replaced with ETS file."
         } else {
             Write-Host "Invalid choice. No files were replaced."
