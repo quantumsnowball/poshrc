@@ -66,3 +66,6 @@ function CompareReplace {
 # Call the function to compare config and control files in both directories
 CompareReplace -text "config_local.cfg" -ets_file $ets_config -ats_file $ats_config
 CompareReplace -text "controls.sii" -ets_file $ets_control -ats_file $ats_control
+
+# hold the terminal, press enter to close
+pause
