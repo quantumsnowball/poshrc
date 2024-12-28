@@ -1,6 +1,11 @@
 ;
 ; Extra Del button as mouse control prefix button
 ;
+
+; swap wheel direction
+WheelUp::WheelDown
+WheelDown::WheelUp
+
 #HotIf active
 
 ; disable original key action

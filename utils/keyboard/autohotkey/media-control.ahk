@@ -12,3 +12,10 @@ F14 & Space::Media_Play_Pause
 F14 & ]::Media_Next
 F14 & [::Media_Prev
 
+
+#HotIf active
+
+XButton1 & WheelUp::Send "{Volume_Up}"
+XButton1 & WheelDown::Send "{Volume_Down}"
+
+#HotIf

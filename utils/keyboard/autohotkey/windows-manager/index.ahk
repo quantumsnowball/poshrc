@@ -27,19 +27,15 @@ F14 & \::AltTab
 F14 & Tab::ShiftAltTab
 F14 & PgDn::AltTab
 F14 & PgUp::ShiftAltTab
-F14 & WheelUp::AltTab
-F14 & WheelDown::ShiftAltTab
+F14 & WheelDown::AltTab
+F14 & WheelUp::ShiftAltTab
 XButton1 & Tab::Send "!{Esc}"
-XButton1 & WheelDown::Send "!+{Esc}"
-XButton1 & WheelUp::Send "!{Esc}"
 
 ; workspace switch
 F13 & Del::#^Right
 F13 & Home::#^Left
 F14 & Del::#^Right
 F14 & Home::#^Left
-XButton1 & RButton:: Send "#^{Right}"
-XButton1 & LButton:: Send "#^{Left}"
 XButton1 & MButton:: Send "#{Tab}"
 
 ; jump
@@ -55,8 +51,8 @@ F14 & 1::JumpLeft
 F14 & 2::JumpRight           
 F14 & CapsLock::JumpUp
 F14 & LShift::JumpDown
-XButton2 & WheelDown::JumpUp
-XButton2 & WheelUp::JumpDown
+XButton2 & WheelUp::JumpUp
+XButton2 & WheelDown::JumpDown
 XButton1 & 1::JumpLeft
 XButton1 & 2::JumpRight           
 XButton1 & CapsLock::JumpUp
@@ -67,17 +63,29 @@ XButton2 & CapsLock::JumpUp
 XButton2 & LShift::JumpDown
 
 ; gesture
+XButton1 & LButton:: {
+    if (KeyWait("LButton", "T0.2"))
+        Send "!+{Esc}"
+    else
+        Send "#^{Left}"
+}
+XButton1 & RButton:: {
+    if (KeyWait("RButton", "T0.2"))
+        Send "!{Esc}"
+    else
+        Send "#^{Right}"
+}
 XButton2 & LButton:: {
     if (KeyWait("LButton", "T0.5"))
         JumpLeft
     else
-        ToggleMaximize
+        MoveToLeftThird
 }
 XButton2 & RButton:: {
     if (KeyWait("RButton", "T0.5"))
         JumpRight
     else
-        WinMinimize "A"
+        MoveToRightThird
 }
 XButton2 & MButton:: {
     if (KeyWait("MButton", "T1.2"))

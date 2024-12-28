@@ -40,6 +40,9 @@ F13 & ]::^Del
 ; undo
 F13 & z::^z
 
+; caps lock
+F13 & Esc::CapsLock
+
 ; full screen toggle
 F13 & Enter::!Enter
 

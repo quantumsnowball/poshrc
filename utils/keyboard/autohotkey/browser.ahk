@@ -2,11 +2,11 @@
 #HotIf active and WinActive("ahk_exe chrome.exe")
 
 ; next tab
-F13 & WheelUp::
-~MButton & WheelUp::Send "^{Tab}"
-; previous tab
 F13 & WheelDown::
-~MButton & WheelDown::Send "^+{Tab}"
+~MButton & WheelDown::Send "^{Tab}"
+; previous tab
+F13 & WheelUp::
+~MButton & WheelUp::Send "^+{Tab}"
 ; 
 F13 & LButton::
 ~MButton & LButton:: {
@@ -29,9 +29,17 @@ F13 & RButton::
 }
 
 ; hard refresh
-XButton1::Send "^{F5}"
+XButton1:: {
+    ; fast double click to trigger refresh
+    if (KeyWait("XButton1", "D T0.3"))
+        Send "^{F5}"
+}
 ; show history tab
-XButton2::Send "^h"
+XButton2:: {
+    ; fast double click to show browser history
+    if (KeyWait("XButton2", "D T0.3"))
+        Send "^h"
+}
 
 #HotIf
 

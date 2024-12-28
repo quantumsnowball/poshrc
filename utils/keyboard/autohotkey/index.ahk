@@ -4,6 +4,10 @@
 ; auto reload same script
 #SingleInstance Force
 
+; allow more keypress per interval, default was 2000, 70
+A_HotkeyInterval := 2000
+A_MaxHotkeysPerInterval := 200
+
 ; global state variable
 active := true
 win_states := Map()
