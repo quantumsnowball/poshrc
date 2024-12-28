@@ -25,10 +25,6 @@ function CompareReplace {
         return
     }
 
-    # Get last modified times
-    $ets_mod_time = (Get-Item $ets_file).LastWriteTime
-    $ats_mod_time = (Get-Item $ats_file).LastWriteTime
-
     # Compare the files
     if (Compare-Object (Get-Content $ets_file) (Get-Content $ats_file)) {
         # title
@@ -37,8 +33,8 @@ function CompareReplace {
         # Prompt user for action
         $choice = Read-Host (
         "Which file to use? `n" +
-        "(1) ETS file ($ets_mod_time)`n" + 
-        "(2) ATS file ($ats_mod_time)`n")
+        "(1) ETS file ($((Get-Item $ets_file).LastWriteTime))`n" + 
+        "(2) ATS file ($((Get-Item $ats_file).LastWriteTime))`n")
 
         if ($choice -eq '1') {
     #         # Copy-Item $ats_file -Destination $ets_file -Force
@@ -49,6 +45,11 @@ function CompareReplace {
         } else {
             Write-Host "Invalid choice. No files were replaced."
         }
+
+        # print result
+        Write-Host (
+        "ETS file ($((Get-Item $ets_file).LastWriteTime))`n" + 
+        "ATS file ($((Get-Item $ats_file).LastWriteTime))`n")
     } else {
         Write-Host "No differences found. The files are identical."
     }
