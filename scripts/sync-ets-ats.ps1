@@ -1,12 +1,12 @@
 # Define the file paths
-$ets_path = "$HOME\Documents\Euro Truck Simulator 2\steam_profiles\6962726577636F666665656F6E7468656D6F6F6E"
-$ats_path = "$HOME\Documents\American Truck Simulator\steam_profiles\6962726577636F666665656F6E7468656D6F6F6E"
-$config_fname = "config_local.cfg"
-$control_fname = "controls.sii"
-$ets_config = "$ets_path\$config_fname"
-$ats_config = "$ats_path\$config_fname"
-$ets_control = "$ets_path\$control_fname"
-$ats_control = "$ats_path\$control_fname"
+$ETS_PATH = "$HOME\Documents\Euro Truck Simulator 2\steam_profiles\6962726577636F666665656F6E7468656D6F6F6E"
+$ATS_PATH = "$HOME\Documents\American Truck Simulator\steam_profiles\6962726577636F666665656F6E7468656D6F6F6E"
+$CONFIG_FNAME = "config_local.cfg"
+$CONTROL_FNAME = "controls.sii"
+$ets_config = "$ETS_PATH\$CONFIG_FNAME"
+$ats_config = "$ATS_PATH\$CONFIG_FNAME"
+$ets_control = "$ETS_PATH\$CONTROL_FNAME"
+$ats_control = "$ATS_PATH\$CONTROL_FNAME"
 
 
 function CompareReplace {
