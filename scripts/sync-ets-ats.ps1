@@ -25,11 +25,11 @@ function CompareReplace {
         return
     }
 
+    # Show section title
+    Write-Host "Comparing ``$text`` files:"
+
     # Compare the files
     if (Compare-Object (Get-Content $ets_file) (Get-Content $ats_file)) {
-        # title
-        Write-Host "Comparing ``$text`` files:"
-
         # Prompt user for action
         $choice = Read-Host (
         "Which file to use? `n" +
@@ -59,7 +59,7 @@ function CompareReplace {
         "ETS file ($((Get-Item $ets_file).LastWriteTime))`n" + 
         "ATS file ($((Get-Item $ats_file).LastWriteTime))`n")
     } else {
-        Write-Host "No differences found. The files are identical."
+        Write-Host "No differences found. The files are identical.`n"
     }
 }
 
