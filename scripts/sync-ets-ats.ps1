@@ -1,12 +1,41 @@
 # Define the file paths
-$ETS_PATH = "$HOME\Documents\Euro Truck Simulator 2\steam_profiles\6962726577636F666665656F6E7468656D6F6F6E"
-$ATS_PATH = "$HOME\Documents\American Truck Simulator\steam_profiles\6962726577636F666665656F6E7468656D6F6F6E"
+$ETS_PATH = "$HOME\Documents\Euro Truck Simulator 2\steam_profiles"
+$ATS_PATH = "$HOME\Documents\American Truck Simulator\steam_profiles"
 $CONFIG_FNAME = "config_local.cfg"
 $CONTROL_FNAME = "controls.sii"
-$ets_config = "$ETS_PATH\$CONFIG_FNAME"
-$ats_config = "$ATS_PATH\$CONFIG_FNAME"
-$ets_control = "$ETS_PATH\$CONTROL_FNAME"
-$ats_control = "$ATS_PATH\$CONTROL_FNAME"
+
+# Function to get the last modified directory name that matches the criteria
+function Get-LastModifiedDir {
+    param (
+        [string]$base_path
+    )
+
+    # Get directories and sort by LastWriteTime
+    $dirs = Get-ChildItem -Path $base_path -Directory | Sort-Object LastWriteTime -Descending
+    return $dirs[0].Name  # Return the name of the last modified directory
+}
+
+# Get the last modified directory names
+$ets_profile_id = Get-LastModifiedDir -base_path $ETS_PATH
+$ats_profile_id = Get-LastModifiedDir -base_path $ATS_PATH
+
+# Check if the last modified directory names are the same
+if ($ets_profile_id -ne $ats_profile_id) {
+    Write-Host "Error: The last modified directories under steam_profiles/ are different."
+    Write-Host "ETS dir: $ets_profile_id"
+    Write-Host "ATS dir: $ats_profile_id"
+    
+    # exit script if dirname are differnt
+    return  
+}
+
+$profile_id = $ets_profile_id
+Write-Host "Steam profile directory:`n$profile_id`n"
+
+$ets_config = "$ETS_PATH\$profile_id\$CONFIG_FNAME"
+$ats_config = "$ATS_PATH\$profile_id\$CONFIG_FNAME"
+$ets_control = "$ETS_PATH\$profile_id\$CONTROL_FNAME"
+$ats_control = "$ATS_PATH\$profile_id\$CONTROL_FNAME"
 
 
 function CompareReplace {
