@@ -28,5 +28,8 @@ msg := ""
 #Include utils.ahk
 #Include mouse.ahk
 
+; update icon
+UpdateActiveStateIcon()
+
 ; return
 return
