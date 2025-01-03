@@ -16,18 +16,14 @@ F14 & F13::
         SoundBeep 800, 150
         SoundBeep 800, 150
         SoundBeep 800, 150
-        ; icon
-        TraySetIcon "icons\tick.ico"
-
-
     }
     else
     {
         ; single low freq long beep is not active
         SoundBeep 400, 450
-        ; icon
-        TraySetIcon "icons\cross.ico"
     }
+    ; update icon
+    UpdateActiveStateIcon()
 }
 
 ; Dynamic remaps
