@@ -1,3 +1,11 @@
+; show the active state icon
+UpdateActiveStateIcon() {
+    if active
+        TraySetIcon "icons\tick.ico"
+    else
+        TraySetIcon "icons\cross.ico"
+}
+
 ; reload 
 F13 & 5::
 {

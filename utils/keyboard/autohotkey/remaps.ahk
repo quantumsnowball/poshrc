@@ -18,9 +18,12 @@ F14 & F13::
         SoundBeep 800, 150
     }
     else
+    {
         ; single low freq long beep is not active
         SoundBeep 400, 450
-
+    }
+    ; update icon
+    UpdateActiveStateIcon()
 }
 
 ; Dynamic remaps
