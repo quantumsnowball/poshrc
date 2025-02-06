@@ -1,3 +1,4 @@
+# This is the symlink base path living inside of the $PROFILE's directory
 $base = "$(Split-Path (Get-Item $PROFILE).FullName)\poshrc"
 
 # init
