@@ -3,3 +3,4 @@
 . "$PSScriptRoot\zoxide.ps1"
 . "$PSScriptRoot\gdu.ps1"
 . "$PSScriptRoot\winget.ps1"
+. "$PSScriptRoot\help.ps1"
