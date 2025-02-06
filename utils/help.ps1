@@ -11,11 +11,20 @@ function wtf {
     $rs = "`e[0m"
 
     # Display command information
-    Write-Host "`n>_ ${G}Get-Command${rs} ${B}$commandName${rs}"
+    Write-Output "`n>_ ${G}Get-Command${rs} ${B}$commandName${rs}"
     Get-Command -Name $commandName -All | Format-List
 
-    Write-Host "`n>_ ${G}Get-Help${rs} ${B}$commandName${rs}"
+    Write-Output "`n>_ ${G}Get-Help${rs} ${B}$commandName${rs}"
     Get-Help $commandName -ErrorAction SilentlyContinue
 
-    Write-Host "`n"
+    Write-Output "`n"
+
+    # NOTE
+    # sometime output is too long, can pipe it to pager
+    # useful pager:
+    #   less:
+    #     winget install jftuga.less
+    #   bat (use less):
+    #     winget install sharkdp.bat
+    #     to enable pager feature, run: $env:BAT_PAGER = 'less'
 }
