@@ -1,4 +1,4 @@
-$base = Split-Path -Path (Get-Item $PROFILE).Target -Parent
+$base = "$(Split-Path (Get-Item $PROFILE).FullName)\poshrc"
 
 # init
 . "$base\init\__init__.ps1"
