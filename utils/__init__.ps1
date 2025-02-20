@@ -4,3 +4,4 @@
 . "$PSScriptRoot\gdu.ps1"
 . "$PSScriptRoot\winget.ps1"
 . "$PSScriptRoot\help.ps1"
+. "$PSScriptRoot\network.ps1"
