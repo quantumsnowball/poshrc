@@ -22,6 +22,7 @@ F13 & m::^Left
 F13 & ,::^Right
 F13 & b::^Left
 F13 & w::^Right
+F13 & e::Send "{Right}^{Left}+^{Right}{Right}"
 
 ; select
 F13 & i::Send "^{Left}+^{Right}"
