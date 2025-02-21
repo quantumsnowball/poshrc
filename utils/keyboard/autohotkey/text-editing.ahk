@@ -24,6 +24,7 @@ F13 & b::^Left
 F13 & w::^Right
 
 ; select
+F13 & i::Send "^{Left}+^{Right}"
 F13 & v::Send "{Home}+{End}"
 
 ; edit
