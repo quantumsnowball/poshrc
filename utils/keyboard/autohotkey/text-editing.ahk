@@ -30,6 +30,7 @@ F13 & v::Send "{Home}+{End}"
 
 ; edit
 F13 & c::^Del
+F13 & s::Send "^{Left}+^{Right}{Del}"
 F13 & x::Del
 F13 & r::F2
 F13 & [::^Backspace
