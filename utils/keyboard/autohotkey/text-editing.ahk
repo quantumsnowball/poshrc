@@ -12,7 +12,7 @@ F13 & l::Right
 ; navigate
 F13 & n::Home
 F13 & .::End
-; F13 & u::PgUp
+F13 & u::PgUp
 F13 & d::PgDn
 F13 & `;::PgUp
 F13 & '::PgDn
@@ -24,10 +24,6 @@ F13 & b::^Left
 F13 & w::^Right
 
 ; select
-F13 & i::^+Left
-F13 & u::^+Right
-F13 & y::+Home
-F13 & o::+End
 F13 & v::Send "{Home}+{End}"
 
 ; edit
