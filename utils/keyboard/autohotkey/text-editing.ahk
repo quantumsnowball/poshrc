@@ -18,8 +18,8 @@ F13 & `;::PgUp
 F13 & '::PgDn
 
 ; jump
-F13 & ,::^Left
-F13 & m::^Right
+F13 & m::^Left
+F13 & ,::^Right
 F13 & b::^Left
 F13 & w::^Right
 
