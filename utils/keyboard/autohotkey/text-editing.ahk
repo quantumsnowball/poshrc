@@ -14,8 +14,8 @@ F13 & n::Home
 F13 & .::End
 F13 & u::PgUp
 F13 & d::PgDn
-F13 & `;::PgUp
-F13 & '::PgDn
+F13 & '::PgUp
+F13 & `;::PgDn
 
 ; jump
 F13 & m::^Left
