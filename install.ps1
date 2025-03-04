@@ -1,5 +1,7 @@
 # NOTE 
 # Execute this file using PowerShell v7 under the repo root directory
+# (in powershell, cd into the linux distro directory using file explorer link,
+# i.e. \\wsl.localhost\...\.config\poshrc, then execute this install script)
 #
 
 # create symlink from $PROFILE file to repo __init__.ps1
