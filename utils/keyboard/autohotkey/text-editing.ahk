@@ -12,26 +12,25 @@ F13 & l::Right
 ; navigate
 F13 & n::Home
 F13 & .::End
-; F13 & u::PgUp
+F13 & u::PgUp
 F13 & d::PgDn
-F13 & `;::PgUp
-F13 & '::PgDn
+F13 & '::PgUp
+F13 & `;::PgDn
 
 ; jump
-F13 & ,::^Left
-F13 & m::^Right
+F13 & m::^Left
+F13 & ,::^Right
 F13 & b::^Left
 F13 & w::^Right
+F13 & e::Send "{Right}^{Left}+^{Right}{Right}"
 
 ; select
-F13 & i::^+Left
-F13 & u::^+Right
-F13 & y::+Home
-F13 & o::+End
+F13 & i::Send "^{Left}+^{Right}"
 F13 & v::Send "{Home}+{End}"
 
 ; edit
 F13 & c::^Del
+F13 & s::Send "^{Left}+^{Right}{Del}"
 F13 & x::Del
 F13 & r::F2
 F13 & [::^Backspace
