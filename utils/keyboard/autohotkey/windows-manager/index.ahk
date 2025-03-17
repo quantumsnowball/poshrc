@@ -53,10 +53,6 @@ F14 & CapsLock::JumpUp
 F14 & LShift::JumpDown
 XButton2 & WheelUp::JumpUp
 XButton2 & WheelDown::JumpDown
-XButton1 & 1::JumpLeft
-XButton1 & 2::JumpRight           
-XButton1 & CapsLock::JumpUp
-XButton1 & LShift::JumpDown
 XButton2 & 1::JumpLeft
 XButton2 & 2::JumpRight           
 XButton2 & CapsLock::JumpUp
