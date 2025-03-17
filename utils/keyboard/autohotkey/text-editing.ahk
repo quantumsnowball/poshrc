@@ -51,3 +51,10 @@ F13 & 2::Send FormatTime("", "yyyy-MM-dd HH:mm:ss")
 F13 & 3::Send FormatTime("", "yyyy-MM-dd_HH.mm.ss")
 F13 & 4::Send FormatTime("", "yyyyMMdd_HHmmss")
 
+; enabled only when active
+#HotIf active
+
+; enter
+XButton1 & CapsLock::Enter
+
+#HotIf
