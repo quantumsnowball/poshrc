@@ -5,3 +5,4 @@
 . "$PSScriptRoot\winget.ps1"
 . "$PSScriptRoot\help.ps1"
 . "$PSScriptRoot\network.ps1"
+. "$PSScriptRoot\nvidia.ps1"
