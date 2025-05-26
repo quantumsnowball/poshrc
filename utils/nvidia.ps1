@@ -16,5 +16,9 @@ function Nvidia.ClearShaderCache {
             Write-Host "Path not found: $path" -ForegroundColor Yellow
         }
     }
+
+    # NOTE: some files may be locked by programs and will not delete
+    # usually the windows manager or some graphics programs
+    # e.g. SignalRGB
 }
 
