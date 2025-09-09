@@ -1,0 +1,2 @@
+Set-Alias py python
+

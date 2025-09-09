@@ -6,3 +6,4 @@
 . "$PSScriptRoot\help.ps1"
 . "$PSScriptRoot\network.ps1"
 . "$PSScriptRoot\nvidia.ps1"
+. "$PSScriptRoot\python.ps1"
