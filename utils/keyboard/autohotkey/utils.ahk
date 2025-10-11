@@ -12,6 +12,21 @@ F13 & 5::
     SoundBeep 400, 400
     Reload
     SetCapsLockState "Off"
+    Send "{Esc up}"
+    Send "{CapsLock up}"
+    Send "{Tab up}"
+    Send "{LWin up}"
+    Send "{LAlt up}"
+    Send "{LCtrl up}"
+    Send "{LShift up}"
+    Send "{Space up}"
+    Send "{RWin up}"
+    Send "{RAlt up}"
+    Send "{RCtrl up}"
+    Send "{RShift up}"
+    Send "{Backspace up}"
+    Send "{F13 up}"
+    Send "{F14 up}"
     SoundBeep 800, 100
 }
 
