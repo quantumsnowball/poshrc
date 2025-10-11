@@ -32,6 +32,8 @@ F14 & F13::
 Esc::`
 LAlt::LCtrl
 LWin::LAlt
+; this need to disable in inactive mode, game will not recognize Esc otherwise
+~CapsLock up::SetCapsLockState "Off"
 #HotIf
 ; - auto deactivated
 ;   bug: conflicting with Task Manager top search bar
@@ -44,7 +46,6 @@ LCtrl::LWin
 ; Static remaps
 ; - put safe remaps here
 CapsLock::Esc
-~CapsLock up::SetCapsLockState "Off"
 Home::Del
 Del::Home
 
