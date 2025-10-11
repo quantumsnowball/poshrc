@@ -11,6 +11,7 @@ F13 & 5::
 {
     SoundBeep 400, 400
     Reload
+    SetCapsLockState "Off"
     SoundBeep 800, 100
 }
 
