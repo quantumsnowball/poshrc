@@ -53,9 +53,11 @@ ResetWindow() {
     }
 }
 
-; swap wheel direction 
+; swap wheel direction, including shift + wheel
 WheelDown::ScrollHandler(1)
++WheelDown::ScrollHandler(1)
 WheelUp::ScrollHandler(-1)
++WheelUp::ScrollHandler(-1)
 
 
 #HotIf active
