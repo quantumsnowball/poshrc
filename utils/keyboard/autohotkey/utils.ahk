@@ -7,8 +7,7 @@ UpdateActiveStateIcon() {
 }
 
 ; reload 
-F13 & 5::
-{
+ReloadScript() {
     SoundBeep 400, 400
     Reload
     SetCapsLockState "Off"
@@ -28,6 +27,11 @@ F13 & 5::
     Send "{F13 up}"
     Send "{F14 up}"
     SoundBeep 800, 100
+}
+F13 & 5::ReloadScript
+F13:: {
+    if (KeyWait("F13", "D T0.1"))
+        ReloadScript
 }
 
 ; lock pc
