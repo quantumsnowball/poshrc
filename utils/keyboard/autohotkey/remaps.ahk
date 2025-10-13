@@ -3,9 +3,7 @@
 ;
 
 ; Toggle active remap state
-F13 & F14::
-F14 & F13::
-{
+ToggleActiveState() {
     ; toggle
     global active
     active := !active
@@ -25,6 +23,12 @@ F14 & F13::
     ; update icon
     UpdateActiveStateIcon()
 }
+F13 & F14::ToggleActiveState
+F14 & F13::ToggleActiveState
+; F14:: {
+;     if (KeyWait("F14", "D T0.1"))
+;         ToggleActiveState
+; }
 
 ; Dynamic remaps
 ; - manually activated
