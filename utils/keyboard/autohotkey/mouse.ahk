@@ -2,7 +2,7 @@
 ; Extra Del button as mouse control prefix button
 ;
 
-; swap wheel direction, anti-flicking
+; anti-flicking script
 scrollEvents := []
 windowSize := 5
 lastScrollTime := 0
@@ -10,11 +10,18 @@ resetDelay := 100  ; ms
 
 ScrollHandler(direction) {
     global scrollEvents, lastScrollTime
-    scrollEvents.Push(direction)  ; 1 for up, -1 for down
+
+    ; every raw scroll event is a vote
+    ; cast the vote to a global vote box
+    ; 1 for up, -1 for down
+    scrollEvents.Push(direction)
+
+    ; if it is full, then fifo
     if (scrollEvents.Length > windowSize) {
         scrollEvents.RemoveAt(1)
     }
 
+    ; count the number of up events
     upCount := 0
     for event in scrollEvents {
         if (event = 1) {
@@ -22,25 +29,31 @@ ScrollHandler(direction) {
         }
     }
 
+    ; if up events vot is more than have population, declare win, else loss
     majorityDirection := (upCount > scrollEvents.Length // 2) ? 1 : -1
 
+    ; send the real event based on the vote result
     if (majorityDirection = 1) {
         Send "{WheelUp}"
     } else {
         Send "{WheelDown}"
     }
 
+    ; set a new timer to try to clear the vote box after some delay
     lastScrollTime := A_TickCount
     SetTimer ResetWindow, -resetDelay
 }
 
 ResetWindow() {
     global scrollEvents, lastScrollTime, resetDelay
+
+    ; will only reset vote box if the time different is larger than resetDelay
     if (A_TickCount - lastScrollTime >= resetDelay) {
         scrollEvents := []
     }
 }
 
+; swap wheel direction 
 WheelDown::ScrollHandler(1)
 WheelUp::ScrollHandler(-1)
 
