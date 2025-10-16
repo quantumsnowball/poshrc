@@ -2,6 +2,7 @@
 . "$PSScriptRoot\dir.ps1"
 . "$PSScriptRoot\zoxide.ps1"
 . "$PSScriptRoot\gdu.ps1"
+. "$PSScriptRoot\gamebar.ps1"
 . "$PSScriptRoot\winget.ps1"
 . "$PSScriptRoot\help.ps1"
 . "$PSScriptRoot\network.ps1"
