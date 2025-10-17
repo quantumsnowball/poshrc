@@ -1,11 +1,5 @@
-. "$PSScriptRoot\shell.ps1"
-. "$PSScriptRoot\dir.ps1"
-. "$PSScriptRoot\zoxide.ps1"
-. "$PSScriptRoot\gdu.ps1"
-. "$PSScriptRoot\gamebar.ps1"
-. "$PSScriptRoot\winget.ps1"
-. "$PSScriptRoot\help.ps1"
-. "$PSScriptRoot\network.ps1"
-. "$PSScriptRoot\nvidia.ps1"
-. "$PSScriptRoot\python.ps1"
-. "$PSScriptRoot\pip.ps1"
+Get-ChildItem -Path $PSScriptRoot -Filter "*.ps1" | ForEach-Object {
+    if ($_.Name -ne "__init__.ps1") {
+        . "$PSScriptRoot\$($_.Name)"
+    }
+}
