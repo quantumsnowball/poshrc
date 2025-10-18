@@ -34,22 +34,21 @@ F14 & F13::ToggleActiveState
 ; - manually activated
 #HotIf active
 Esc::`
-LAlt::LCtrl
-LWin::LAlt
-; this need to disable in inactive mode, game will not recognize Esc otherwise
-~CapsLock up::SetCapsLockState "Off"
+$LAlt::LCtrl
+$LWin::LAlt
 #HotIf
+
 ; - auto deactivated
 ;   bug: conflicting with Task Manager top search bar
 ;        can't remap LCtrl::<any key> at all
 GroupAdd "SystemSpecial", "ahk_class TaskManagerWindow"
 #HotIf active and !WinActive("ahk_group SystemSpecial")
-LCtrl::LWin 
+$LCtrl::LWin 
 #HotIf
 
 ; Static remaps
 ; - put safe remaps here
-CapsLock::Esc
+$CapsLock::Esc
 Home::Del
 Del::Home
 
