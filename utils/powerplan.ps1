@@ -20,11 +20,25 @@ function powerplan.set {
     $planList = powercfg /list
 
     # Check if the provided plan name exists in the list
-    $planGuid = ($planList | Select-String -Pattern "^\s*Power Scheme GUID:.*\($planName\)$") -replace '.*: ', '' -replace '\s*\(.*\)', ''
+    $planGuid = ($planList | Select-String -Pattern "^\s*Power Scheme GUID:.*\($planName\)\s*(\*|$)") `
+        -replace '.*: ', '' `
+        -replace '\s*\(.*\)\s*\*?$', ''
+
+
 
     if ($planGuid) {
-        powercfg /setactive $planGuid
-        Write-Host "Switched to '$planName' power plan."
+        # Get the current active power plan
+        $currentPlan = powercfg /getactivescheme
+        $currentPlanGuid = $currentPlan -replace '.*: ', '' -replace '\s*\(.*\)', ''
+
+        # Check if the current plan is already the same as the requested plan
+        if ($currentPlanGuid -eq $planGuid) {
+            Write-Host "The '$planName' power plan is already active." -ForegroundColor Yellow
+        } else {
+            # Switch to the requested plan
+            powercfg /setactive $planGuid
+            Write-Host "Switched to '$planName' power plan." -ForegroundColor 'Green'
+        }
     } else {
         Write-Host "Error: Power plan '$planName' not found." -ForegroundColor Red
     }
