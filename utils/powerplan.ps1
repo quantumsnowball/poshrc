@@ -17,3 +17,12 @@ function powerplan.set {
     }
 }
 
+function powerplan.Balanced {
+    powerplan.set 'Balanced'
+}
+function powerplan.High-Performance {
+    powerplan.set 'High Performance'
+}
+function powerplan.Ultimate-Performance {
+    powerplan.set 'Ultimate Performance'
+}
