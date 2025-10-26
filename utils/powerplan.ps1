@@ -1,3 +1,16 @@
+function powerplan {
+    # Get the currently active power plan
+    $currentPlan = powercfg /getactivescheme
+    Write-Host "Current Active Power Plan:" -ForegroundColor Green
+    Write-Host $currentPlan
+
+    # List all available power plans
+    Write-Host "`nAvailable Power Plans:" -ForegroundColor Cyan
+    powercfg /list | ForEach-Object {
+        Write-Host $_
+    }
+}
+
 function powerplan.set {
     param (
         [string]$planName
