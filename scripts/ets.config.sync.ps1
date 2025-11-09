@@ -1,7 +1,8 @@
 # Define the file paths
 $ETS_PATH = "$HOME\Documents\Euro Truck Simulator 2\steam_profiles"
 $ATS_PATH = "$HOME\Documents\American Truck Simulator\steam_profiles"
-$CONFIG_FNAME = "config_local.cfg"
+$CONFIG_FNAME = "config.cfg"
+$CONFIG_LOCAL_FNAME = "config_local.cfg"
 $CONTROL_FNAME = "controls.sii"
 
 # Function to get the last modified directory name that matches the criteria
@@ -32,8 +33,10 @@ if ($ets_profile_id -ne $ats_profile_id) {
 $profile_id = $ets_profile_id
 Write-Host "Steam profile directory:`n$profile_id`n"
 
-$ets_config = "$ETS_PATH\$profile_id\$CONFIG_FNAME"
-$ats_config = "$ATS_PATH\$profile_id\$CONFIG_FNAME"
+$ets_config = "$ETS_PATH\..\$CONFIG_FNAME"
+$ats_config = "$ATS_PATH\..\$CONFIG_FNAME"
+$ets_config_local = "$ETS_PATH\$profile_id\$CONFIG_LOCAL_FNAME"
+$ats_config_local = "$ATS_PATH\$profile_id\$CONFIG_LOCAL_FNAME"
 $ets_control = "$ETS_PATH\$profile_id\$CONTROL_FNAME"
 $ats_control = "$ATS_PATH\$profile_id\$CONTROL_FNAME"
 
@@ -93,8 +96,9 @@ function CompareReplace {
 }
 
 # Call the function to compare config and control files in both directories
-CompareReplace -text "config_local.cfg" -ets_file $ets_config -ats_file $ats_config
+CompareReplace -text "config_local.cfg" -ets_file $ets_config_local -ats_file $ats_config_local
 CompareReplace -text "controls.sii" -ets_file $ets_control -ats_file $ats_control
+CompareReplace -text "config.cfg" -ets_file $ets_config -ats_file $ats_config
 
 # hold the terminal, press enter to close
 pause
