@@ -14,12 +14,12 @@ F13 & n::Home
 F13 & .::End
 F13 & u::PgUp
 F13 & d::PgDn
-F13 & '::PgUp
-F13 & `;::PgDn
+F13 & m::PgDn
+F13 & ,::PgUp
 
 ; jump
-F13 & m::^Left
-F13 & ,::^Right
+F13 & [::^Left
+F13 & ]::^Right
 F13 & b::^Left
 F13 & w::^Right
 F13 & e::Send "{Right}^{Left}+^{Right}{Right}"
@@ -33,8 +33,6 @@ F13 & c::^Del
 F13 & s::Send "^{Left}+^{Right}{Del}"
 F13 & x::Del
 F13 & r::F2
-F13 & [::^Backspace
-F13 & ]::^Del
 
 ; undo
 F13 & z::^z
