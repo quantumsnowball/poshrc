@@ -1,0 +1,19 @@
+" delete
+nnoremap d "_d
+nnoremap D "_D
+nnoremap x "_x
+nnoremap X "_X
+" replace
+nnoremap c "_c
+nnoremap C "_C
+" cut
+nnoremap yd d
+nnoremap yD D
+nnoremap yx x
+nnoremap yX X
+nnoremap yc c
+nnoremap yC C
+" visual mode replace without copying the deleted text
+vnoremap p "_dP
+vnoremap P "_dP
+
