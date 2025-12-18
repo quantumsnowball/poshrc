@@ -16,4 +16,18 @@ nnoremap yC C
 " visual mode replace without copying the deleted text
 vnoremap p "_dP
 vnoremap P "_dP
+" Home, End
+nnoremap gh ^
+vnoremap gh ^
+onoremap gh ^
+nnoremap gl $
+vnoremap gl $
+onoremap gl $
+nnoremap L E
+vnoremap L E
+onoremap L E
+nnoremap H B
+vnoremap H B
+onoremap H B
+
 
