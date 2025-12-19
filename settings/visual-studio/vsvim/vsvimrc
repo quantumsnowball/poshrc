@@ -16,6 +16,8 @@ nnoremap yC C
 " visual mode replace without copying the deleted text
 vnoremap p "_dP
 vnoremap P "_dP
+" break line
+nnoremap \ i<CR><Esc>
 " tab pairs
 nmap <Tab> %
 vmap <Tab> %
