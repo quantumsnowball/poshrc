@@ -1,0 +1,17 @@
+{
+    "vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim",
+    "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
+    "keyboard.dispatch": "keyCode",
+    "editor.fontFamily": "'Hurmit NF'",
+    "terminal.integrated.fontFamily": "'3270Medium Nerd Font Mono'",
+    "editor.fontSize": 15,
+    "terminal.integrated.fontSize": 18,
+    "editor.formatOnSave": true,
+    "workbench.colorTheme": "Monokai",
+    "editor.minimap.enabled": false,
+    "workbench.list.automaticKeyboardNavigation": false,
+    "editor.tabSize": 2,
+    "editor.inlineSuggest.enabled": true,
+    "vscode-neovim.neovimInitVimPaths.linux": "$HOME/.config/Code/User/init.vim",
+    "vscode-neovim.neovimInitVimPaths.darwin": "$HOME/Library/Application Support/Code/User/init.vim"
+}
