@@ -1,3 +1,13 @@
+function gamebar.exit {
+    # Forcefully terminates all processes related to the Xbox Game Bar
+    # This includes the main GameBar.exe and any related processes like GameBarFTServer.exe
+    
+    Get-Process -Name "GameBar" -ErrorAction SilentlyContinue | Stop-Process -Force
+    Get-Process -Name "GameBarFTServer" -ErrorAction SilentlyContinue | Stop-Process -Force
+    
+    Write-Host "Xbox Game Bar processes have been terminated."
+}
+
 function gamebar.reset {
     Write-Host "Finding the exact name of the Broadcast DVR User Service..." -ForegroundColor 'yellow'
 
