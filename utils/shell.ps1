@@ -3,7 +3,13 @@ Set-Alias -Name c -Value clear
 Set-Alias -Name cl -Value clear
 
 # reload
-function rr { Start-Process pwsh -NoNewWindow -Wait; Exit }
+function posh.reload-shell { Start-Process pwsh -NoNewWindow -Wait; Exit }
+Set-Alias -Name rr -Value posh.reload-shell
+
+# exit
+function posh.exit { exit }
+Set-Alias -Name x -Value posh.exit
+Set-Alias -Name q -Value posh.exit
 
 # which
 Set-Alias -Name which -Value Get-Command
