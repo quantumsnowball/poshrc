@@ -48,7 +48,11 @@ $LCtrl::LWin
 
 ; Static remaps
 ; - put safe remaps here
-$CapsLock::Esc
+*CapsLock::
+{
+    SetCapsLockState "AlwaysOff"
+    Send "{Esc}"
+}
 Home::Del
 Del::Home
 
