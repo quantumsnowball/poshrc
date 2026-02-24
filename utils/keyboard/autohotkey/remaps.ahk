@@ -50,8 +50,13 @@ $LCtrl::LWin
 ; - put safe remaps here
 *CapsLock::
 {
-    SetCapsLockState "AlwaysOff"
-    Send "{Esc}"
+    SetCapsLockState "AlwaysOff"   ; prevent real caps toggle
+    SendInput "{Esc down}"         ; press Esc immediately
+}
+*CapsLock up::
+{
+    SetCapsLockState "AlwaysOff"   ; prevent real caps toggle
+    SendInput "{Esc up}"           ; release only on physical release
 }
 Home::Del
 Del::Home
