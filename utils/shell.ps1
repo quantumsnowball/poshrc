@@ -4,7 +4,7 @@ Set-Alias -Name cl -Value clear
 
 # reload
 function posh.reload-shell { Start-Process pwsh -NoNewWindow -Wait; Exit }
-Set-Alias -Name rr -Value posh.reload-shell
+Set-Alias -Name r -Value posh.reload-shell -Force
 
 # exit
 function posh.exit { exit }
