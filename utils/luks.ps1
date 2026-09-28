@@ -7,3 +7,15 @@ function luks.drives.rescan() {
     sudo pnputil /scan-devices
     Write-Host "Rescan complete!" -ForegroundColor Green
 }
+
+function luks.mount {
+    param (
+        [Parameter(Mandatory = $true, ValueFromRemainingArguments = $true)]
+        [string[]]$Ids
+    )
+
+    foreach ($id in $Ids) {
+        Write-Host "Mounting PHYSICALDRIVE$id to WSL..." -ForegroundColor Cyan
+        sudo wsl --mount "\\.\PHYSICALDRIVE$id" --bare
+    }
+}
